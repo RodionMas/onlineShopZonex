@@ -9,9 +9,8 @@ const CategoriesShop = ({
   setStub,
   counterCategory,
   setCounterCategory,
-  productOnShopPageFilter,
-  setProductOnShopPageFilter,
-}) => {
+  
+  }) => {
   const [hideContent, setHideContent] = React.useState(false);
   return (
     <div className={style.wrapper}>

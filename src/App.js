@@ -45,32 +45,89 @@ function App() {
 
   //SelectedFilteres component--
 
-  //counter filter
+  //counter filters
   const [counterCategory, setCounterCategory] = React.useState(1);
-  //counter filter--
+  const [counterColor, setCounterColor] = React.useState(0)
 
-  //Categories Component
+  //counter filters--
+
+  //filter checkbox
   const [stub, setStub] = React.useState(true) // Заглушка
-  const [categoriesFIlter, setCategoriesFIlter] = React.useState([
-    {category: "All categories", checked: true},
-    {category: "Accessories", checked: false},
-    {category: "Dresses", checked: false},
-    {category: "Coats", checked: false},
-    {category: "Clothes", checked: false},
-    {category: "T-Shirt", checked: false},
-    {category: "Summer", checked: false},
-    {category: "Shirts", checked: false},
-    {category: "Jacket", checked: false},
-    {category: "Short", checked: false},
-    {category: "Shoes", checked: false},
-    {category: "Sweatshirts", checked: false},
-  ]);
-  //Categories Component
+  const [allFilter, setAllFilter] = React.useState({
+    categoriesFIlter: [
+      { category: "All categories", checked: true },
+      { category: "Accessories", checked: false },
+      { category: "Dresses", checked: false },
+      { category: "Coats", checked: false },
+      { category: "Clothes", checked: false },
+      { category: "T-Shirt", checked: false },
+      { category: "Summer", checked: false },
+      { category: "Shirts", checked: false },
+      { category: "Jacket", checked: false },
+      { category: "Short", checked: false },
+      { category: "Shoes", checked: false },
+      { category: "Sweatshirts", checked: false },
+    ],
+    colorFilter: [
+      { color: "red", checked: false },
+      { color: "yellow", checked: false },
+      { color: "green", checked: false },
+      { color: "white", checked: false },
+      { color: "black", checked: false },
+      { color: "brown", checked: false },
+      { color: "purple", checked: false },
+      { color: "grey", checked: false },
+      { color: "colorful", checked: false },
+      { color: "blue", checked: false },
+    ],
+    sizeFilter: [
+      { size: "23", checked: false },
+      { size: "24", checked: false },
+      { size: "25", checked: false },
+      { size: "26", checked: false },
+      { size: "27", checked: false },
+      { size: "28", checked: false },
+      { size: "29", checked: false },
+      { size: "30", checked: false },
+      { size: "31", checked: false },
+    ],
+    priceFilter: [
+      { price: "0 - 100", checked: false },
+      { price: "100 - 200", checked: false },
+      { price: "200 - 300", checked: false },
+      { price: "300 - 400", checked: false },
+      { price: "400 - 500", checked: false },
+      { price: "500 - 600", checked: false },
+      { price: "600 - 700", checked: false },
+      { price: "700 - 800", checked: false },
+    ],
+    brandFilter: [
+      { brand: "Vero Moda", checked: false },
+      { brand: "Betty Barclay", checked: false },
+      { brand: "Gerry Weber", checked: false },
+      { brand: "Desigual", checked: false },
+      { brand: "Jack & Jones", checked: false },
+      { brand: "Noom", checked: false },
+      { brand: "EMPORIO ARMANI", checked: false },
+      { brand: "S.Oliver", checked: false },
+      { brand: "Marc OPolo", checked: false },
+      { brand: "Karl Lagerfeld", checked: false },
+    ],
+    discountFilter: [
+      { discount: "70% And Above", checked: false },
+      { discount: "60% - 70% Off", checked: false },
+      { discount: "40% - 60% Off", checked: false },
+      { discount: "Less Than 40% Off", checked: false },
+    ],
+  }
+
+  );
+  //filter checkbox
   React.useEffect(() => {
     setTimeout(() => {
       setActiveMarkenig(true);
     }, 6000);
-  }, [newProductFilter, stub, newProductFilter]);
+  }, [newProductFilter, stub,]);
   const closeMarketing = () => {
     setActiveMarkenig(false);
   };
@@ -102,12 +159,14 @@ function App() {
               setNewSelectedFilter={setNewSelectedFilter}
               productOnShopPageFilter={productOnShopPageFilter}
               setProductOnShopPageFilter={setProductOnShopPageFilter}
-              categoriesFIlter={categoriesFIlter}
-              setCategoriesFIlter={setCategoriesFIlter}
+              allFilter={allFilter}
+              setAllFilter={setAllFilter}
               setStub={setStub}
               stub={stub}
               counterCategory={counterCategory}
               setCounterCategory={setCounterCategory}
+              counterColor={counterColor}
+              setCounterColor={setCounterColor}
             />
           }
         ></Route>

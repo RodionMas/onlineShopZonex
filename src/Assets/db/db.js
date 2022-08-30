@@ -20,7 +20,8 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "Vero Moda",
-        "categories": "Shoes"
+        "categories": "Shoes",
+        "color": "black"
     },
     {
         "imgUrl": `${i2}`,
@@ -33,7 +34,8 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "Betty Barclay",
-        "categories": "Dresses"
+        "categories": "Dresses",
+        "color": "red"
     },
     {
         "imgUrl": `${i3}`,
@@ -46,7 +48,8 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "Gerry Weber",
-        "categories": "Jacket"
+        "categories": "Jacket",
+        "color": "grey"
     },
     {
         "imgUrl": `${i4}`,
@@ -59,7 +62,8 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "Desigual",
-        "categories": "Sweatshirts"
+        "categories": "Sweatshirts",
+        "color": "colorful"
     },
     {
         "imgUrl": `${i5}`,
@@ -72,7 +76,8 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "Jack & Jones",
-        "categories": "Shirts"
+        "categories": "Shirts",
+        "color": "blue"
     },
     {
         "imgUrl": `${i6}`,
@@ -85,7 +90,8 @@ export const db = [
         "hot": true,
         "top": false,
         "brand": "Noom",
-        "categories": "Summer"
+        "categories": "Summer",
+        "color": "blue"
     },
     {
         "imgUrl": `${i7}`,
@@ -98,7 +104,8 @@ export const db = [
         "hot": false,
         "top": true,
         "brand": "EMPORIO ARMANI",
-        "categories": "Sweatshirts"
+        "categories": "Sweatshirts",
+        "color": "green"
     },
     {
         "imgUrl": `${i8}`,
@@ -111,7 +118,8 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "S.Oliver",
-        "categories": "Accessories"
+        "categories": "Accessories",
+        "color": "yellow"
     },
     {
         "imgUrl": `${i9}`,
@@ -124,7 +132,8 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "Marc OPolo",
-        "categories": "Shoes"
+        "categories": "Shoes",
+        "color": "blue"
     },
     {
         "imgUrl": `${i10}`,
@@ -137,6 +146,7 @@ export const db = [
         "hot": false,
         "top": false,
         "brand": "Karl Lagerfeld",
-        "categories": "Coats"
+        "categories": "Coats",
+        "color": "black"
     }
 ]

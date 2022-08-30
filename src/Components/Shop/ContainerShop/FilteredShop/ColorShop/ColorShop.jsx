@@ -2,12 +2,17 @@ import React from "react";
 import style from "./ColorShop.module.css";
 import close from "../../../../../Assets/img/close.png";
 
-const ColorShop = ({ colorFilter }) => {
-  const [hideContent, setHideContent] = React.useState(true);
-  const [counterColor, setCounterColor] = React.useState(0);
+const ColorShop = ({ colorFilter,
+  setNewSelectedFilter,
+  newSelectedFilter,
+  setStub,
+  counterColor,
+  setCounterColor, }) => {
+  const [hideContent, setHideContent] = React.useState(false);
   return (
     <div className={style.wrapper}>
       {!hideContent && (
+
         <div className={style.hideBox}>
           <button
             onClick={() => {
@@ -20,7 +25,7 @@ const ColorShop = ({ colorFilter }) => {
           </button>
         </div>
       )}
-      <div className={style.categories}>
+      <div className={style.colors}>
         <hr />
         <div
           onClick={() => {
@@ -28,28 +33,43 @@ const ColorShop = ({ colorFilter }) => {
           }}
           className={style.colorsTextBox}
         >
-          <h2 className={style.categoriesText}>
-            COLOR <span className={style.quantity}>{counterColor}</span>
+          <h2 className={style.colorsText}>
+            COLORS <span className={style.quantity}>{counterColor}</span>
           </h2>
           <hr className={style.smallLine} />
         </div>
         {!hideContent && (
           <div className={style.colorCheks}>
-            {colorFilter.map((category, index) => (
+            {colorFilter.map((color, index) => (
               <label key={index} htmlFor={"colorId" + index}>
                 <input
+                  checked={color.checked}
                   onChange={(e) => {
                     if (e.target.checked) {
+                      setStub(false);
+                      color.checked = e.target.checked;
                       setCounterColor(counterColor + 1);
+                      setNewSelectedFilter([
+                        ...newSelectedFilter,
+                        e.target.value,
+                      ]);
                     } else if (!e.target.checked) {
+                      setStub(true);
+                      color.checked = e.target.checked;
                       setCounterColor(counterColor - 1);
+                      setNewSelectedFilter([
+                        ...newSelectedFilter.filter(
+                          (item) => item != e.target.value
+                        ),
+                      ]);
                     }
                   }}
                   type="checkbox"
                   id={"colorId" + index}
-                  value={category}
+                  value={color.color}
                 />
-                <span>{category}</span>
+
+                <span>{color.color}</span>
               </label>
             ))}
           </div>

@@ -10,13 +10,14 @@ const ProductShop = ({
   newSelectedFilter,
   setNewSelectedFilter,
   productOnShopPageFilter,
-  setProductOnShopPageFilter,
-  categoriesFIlter,
-  setCategoriesFIlter,
+  setAllFilter,
   setStub,
   stub,
   counterCategory,
   setCounterCategory,
+  allFilter,
+  counterColor,
+  setCounterColor,
 }) => {
   return (
     <div>
@@ -29,14 +30,16 @@ const ProductShop = ({
         stub={stub}
         setNewSelectedFilter={setNewSelectedFilter}
         newSelectedFilter={newSelectedFilter}
-        categoriesFIlter={categoriesFIlter}
-        setCategoriesFIlter={setCategoriesFIlter}
+        allFilter={allFilter}
+        setAllFilter={setAllFilter}
         setStub={setStub}
         counterCategory={counterCategory}
         setCounterCategory={setCounterCategory}
+        counterColor={counterColor}
+        setCounterColor={setCounterColor}
       />
       <ProductOnShopPage
-        categoriesFIlter={categoriesFIlter}
+        allFilter={allFilter}
         activeNumber={activeNumber}
         productOnShopPageFilter={productOnShopPageFilter}
       />

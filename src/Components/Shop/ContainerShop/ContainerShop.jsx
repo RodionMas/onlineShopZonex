@@ -4,7 +4,8 @@ import FilteredShop from "./FilteredShop/FilteredShop";
 import ProductShop from "./ProductShop/ProductShop";
 
 const ContainerShop = ({
-  categoriesFIlter,
+  allFilter,
+  setAllFilter,
   colorFilter,
   sizeFilter,
   priceFilter,
@@ -17,11 +18,12 @@ const ContainerShop = ({
   newSelectedFilter,
   setProductOnShopPageFilter,
   productOnShopPageFilter,
-  setCategoriesFIlter,
   setStub,
   stub,
   counterCategory,
   setCounterCategory,
+  counterColor,
+  setCounterColor,
 }) => {
   return (
     <div className={style.wrapper}>
@@ -30,21 +32,23 @@ const ContainerShop = ({
         priceFilter={priceFilter}
         sizeFilter={sizeFilter}
         colorFilter={colorFilter}
-        categoriesFIlter={categoriesFIlter}
+        allFilter={allFilter}
+        setAllFilter={setAllFilter}
         brandFilter={brandFilter}
         discountFilter={discountFilter}
         setNewSelectedFilter={setNewSelectedFilter}
         newSelectedFilter={newSelectedFilter}
-        setCategoriesFIlter={setCategoriesFIlter}
         stub={stub}
         counterCategory={counterCategory}
         setCounterCategory={setCounterCategory}
         productOnShopPageFilter={productOnShopPageFilter}
         setProductOnShopPageFilter={setProductOnShopPageFilter}
+        counterColor={counterColor}
+        setCounterColor={setCounterColor}
       />
       <ProductShop
-        categoriesFIlter={categoriesFIlter}
-        setCategoriesFIlter={setCategoriesFIlter}
+        allFilter={allFilter}
+        setAllFilter={setAllFilter}
         setNewSelectedFilter={setNewSelectedFilter}
         newSelectedFilter={newSelectedFilter}
         activeNumber={activeNumber}
@@ -56,6 +60,8 @@ const ContainerShop = ({
         stub={stub}
         counterCategory={counterCategory}
         setCounterCategory={setCounterCategory}
+        counterColor={counterColor}
+        setCounterColor={setCounterColor}
       />
     </div>
   );

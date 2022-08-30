@@ -2,45 +2,52 @@ import React from "react";
 import BrandShop from "./BrandShop/BrandShop";
 import CategoriesShop from "./CategoriesShop/CategoriesShop";
 import ColorShop from "./ColorShop/ColorShop";
-import PriceShop from "./PriceShop/PriceShop";
-import SizeShop from "./SizeShop/SizeShop";
-import Discount from "./Discount/Discount";
+
 const FilteredShop = ({
-  categoriesFIlter,
-  colorFilter,
-  sizeFilter,
-  priceFilter,
-  brandFilter,
-  discountFilter,
   setNewSelectedFilter,
   newSelectedFilter,
-  setCategoriesFIlter,
   stub,
   setStub,
   counterCategory,
   setCounterCategory,
   productOnShopPageFilter,
   setProductOnShopPageFilter,
+  allFilter,
+  setAllFilter,
+  counterColor,
+  setCounterColor,
 }) => {
+
   return (
     <div>
       <CategoriesShop
         setStub={setStub}
         stub={stub}
-        setCategoriesFIlter={setCategoriesFIlter}
         newSelectedFilter={newSelectedFilter}
         setNewSelectedFilter={setNewSelectedFilter}
-        categoriesFIlter={categoriesFIlter}
+        categoriesFIlter={allFilter.categoriesFIlter}
+        setAllFilter={setAllFilter}
         counterCategory={counterCategory}
         setCounterCategory={setCounterCategory}
         productOnShopPageFilter={productOnShopPageFilter}
         setProductOnShopPageFilter={setProductOnShopPageFilter}
       />
-      <ColorShop colorFilter={colorFilter} />
-      <SizeShop sizeFilter={sizeFilter} />
-      <PriceShop priceFilter={priceFilter} />
-      <BrandShop brandFilter={brandFilter} />
-      <Discount discountFilter={discountFilter} />
+      <ColorShop colorFilter={allFilter.colorFilter}
+        setStub={setStub}
+        stub={stub}
+        newSelectedFilter={newSelectedFilter}
+        setNewSelectedFilter={setNewSelectedFilter}
+        setAllFilter={setAllFilter}
+        counterCategory={counterCategory}
+        setCounterCategory={setCounterCategory}
+        productOnShopPageFilter={productOnShopPageFilter}
+        setProductOnShopPageFilter={setProductOnShopPageFilter}
+        counterColor={counterColor}
+        setCounterColor={setCounterColor} />
+      {/* <SizeShop sizeFilter={allFilter.sizeFilter} />
+      <PriceShop priceFilter={allFilter.priceFilter} />
+      <BrandShop brandFilter={allFilter.brandFilter} />
+      <Discount discountFilter={allFilter.discountFilter} /> */}
     </div>
   );
 };
