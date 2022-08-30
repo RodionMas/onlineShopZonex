@@ -1,0 +1,18 @@
+.wrapper{
+    margin-right: 10px;
+}
+.listIcon{
+    display: flex;
+}
+.itemIcon + .itemIcon{
+    margin-left: 25px;
+}
+.bag{
+    color: #fff;
+    background: #151515;
+    border-radius: 50%;
+    padding: 5px 6px;
+    font-size: 10px;
+    position: relative;
+    bottom: 5px;
+}

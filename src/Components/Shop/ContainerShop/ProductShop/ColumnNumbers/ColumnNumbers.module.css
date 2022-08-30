@@ -1,0 +1,29 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.text{
+    font-size: 15px;
+}
+.btnNum{
+    margin-left: 7px;
+    margin-right: 7px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #858585;
+    font-weight: 700;
+}
+.activeBtnNum{
+    position: relative;
+    margin-left: 7px;
+    margin-right: 7px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #000;
+    font-weight: 700;
+    border-bottom: 2px solid #000;
+    font-size: 15px;
+}

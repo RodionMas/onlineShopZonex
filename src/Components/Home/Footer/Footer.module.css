@@ -1,0 +1,61 @@
+.footer{
+    padding-bottom: 50px;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 100px;
+    
+}
+.service h2{
+    font-size: 16px;
+    font-weight: bold;
+}
+.list{
+    margin-top: 40px;
+}
+.item + .item{
+    margin-top: 25px;
+}
+.item span{
+    color: #6e6e6e;
+}
+.inp{
+    width: 650px;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    outline: 0;
+}
+.boxInp{
+    position: relative;
+}
+.btnInp{
+    position: absolute;
+    right: 0px;
+    border: none; 
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+.line{
+    width: 100%;
+    height: 2px;
+    color: #000;
+}
+.boxFooter{
+    display: flex;
+    justify-content: space-between;
+}
+.policy{
+    display: flex;
+}
+.policy h3 + h3{
+    margin-left: 20px;
+}
+.socialList{
+    display: flex;
+}
+.socialItem + .socialItem{
+    margin-left: 10px;
+}

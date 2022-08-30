@@ -1,0 +1,44 @@
+.wrapper{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+.bannerLeft{
+    background: url(../../../Assets//img/eleven_hero_B.jpg) 100% 100% no-repeat;
+    width: 960px;
+    height: 420px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bannerRight{
+    background: url(../../../Assets//img/imageBannerBotRight.jpg) 100% 100% no-repeat;
+    width: 960px;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    text-align: center;
+}
+.title{
+font-size: 48px;
+color: #fff;
+line-height: 100px;
+}
+.link{
+    font-size: 15px;
+    color: #fff;
+    padding-bottom: 5px;
+}
+.link:hover{
+    border-bottom: 2px solid #fff;
+}

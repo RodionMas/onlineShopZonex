@@ -1,0 +1,59 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background-color: #f8f8f8;
+}
+.heroBox {
+    width:501px;
+    height:577px;
+    text-align:center;
+    padding-bottom:0px;
+    margin-bottom:0px;
+    height: 100vh;
+}
+.hero{
+    position:relative;
+    height: 100vh;
+}
+.textBox {
+  max-width: 380px;
+}
+.title {
+  font-size: 36px;
+  padding-bottom: 32px;
+}
+.text {
+  font-size: 15px;
+  color: #454545;
+}
+.btnBox {
+  margin-top: 50px;
+}
+.btnBox button {
+  padding: 19px 45px;
+  cursor: pointer;
+}
+.discovery {
+  color: #fff;
+  background: #000;
+  margin-right: 16px;
+  border: 1px solid #000;
+  transition: all 1s;
+}
+.discovery:hover {
+  background: #fff;
+  color: #000;
+}
+.styleshopNow {
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  transition: all 1s;
+}
+.styleshopNow:hover {
+  background: #000;
+  color: #fff;
+}

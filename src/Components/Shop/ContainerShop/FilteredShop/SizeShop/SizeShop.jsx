@@ -1,0 +1,62 @@
+import React from "react";
+import style from "./SizeShop.module.css";
+import close from "../../../../../Assets/img/close.png";
+const SizeShop = ({ sizeFilter }) => {
+  const [hideContent, setHideContent] = React.useState(true);
+  const [counterSize, setCounterSize] = React.useState(0);
+  return (
+    <div className={style.wrapper}>
+      {!hideContent && (
+        <div className={style.hideBox}>
+          <button
+            onClick={() => {
+              setHideContent(true);
+            }}
+            className={style.btnHide}
+          >
+            <img src={close} alt="close" />
+            <span className={style.hideText}> HIDE FILTRES </span>
+          </button>
+        </div>
+      )}
+      <div className={style.categories}>
+        <hr />
+        <div
+          onClick={() => {
+            setHideContent(false);
+          }}
+          className={style.sizeTextBox}
+        >
+          <h2 className={style.categoriesText}>
+            SIZE <span className={style.quantity}>{counterSize}</span>
+          </h2>
+          <hr className={style.smallLine} />
+        </div>
+        {!hideContent && (
+          <div className={style.sizeCheks}>
+            {sizeFilter.map((category, index) => (
+              <label key={index} htmlFor={"sizeId" + index}>
+                <input
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setCounterSize(counterSize + 1);
+                    } else if (!e.target.checked) {
+                      setCounterSize(counterSize - 1);
+                    }
+                  }}
+                  type="checkbox"
+                  id={"sizeId" + index}
+                  value={category}
+                />
+                <span>{category}</span>
+              </label>
+            ))}
+          </div>
+        )}
+        <hr />
+      </div>
+    </div>
+  );
+};
+
+export default SizeShop;

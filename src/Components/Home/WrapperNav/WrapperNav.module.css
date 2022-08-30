@@ -1,0 +1,10 @@
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 17px;
+    max-width: 1820px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}

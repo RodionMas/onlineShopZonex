@@ -1,0 +1,33 @@
+.wrapper{
+    width: 280px;
+    height: 115px;
+    background: #fff;
+    position: fixed;
+    left: 50px;
+    bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 10;
+}
+.text{
+    margin-left: 10px;
+    line-height: 17px;
+}
+.imgMarketing{
+    height: 90px;
+    width: 70px;
+}
+.purchaed{
+    font-size: 11px;
+    color: #858585;
+}
+.title{
+    font-size: 15px;
+}
+.ago{
+    color: #858585;
+}
+.close{
+    cursor: pointer;
+}
