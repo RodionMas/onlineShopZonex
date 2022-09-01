@@ -18,6 +18,7 @@ const ProductShop = ({
   allFilter,
   counterColor,
   setCounterColor,
+  setProductOnShopPageFilter,
 }) => {
   return (
     <div>
@@ -39,6 +40,7 @@ const ProductShop = ({
         setCounterColor={setCounterColor}
       />
       <ProductOnShopPage
+        setProductOnShopPageFilter={setProductOnShopPageFilter}
         allFilter={allFilter}
         activeNumber={activeNumber}
         productOnShopPageFilter={productOnShopPageFilter}

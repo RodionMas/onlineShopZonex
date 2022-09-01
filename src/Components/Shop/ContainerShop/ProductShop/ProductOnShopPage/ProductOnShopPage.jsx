@@ -9,31 +9,24 @@ const ProductOnShopPage = ({
   productOnShopPageFilter,
   activeNumber,
   allFilter,
+  setProductOnShopPageFilter,
 }) => {
   //уникальность массива
-  const notDublicate = [];
-  for (let i = 0; i < productOnShopPageFilter.length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (productOnShopPageFilter[i].name !== productOnShopPageFilter[j].name) {
-        notDublicate.push(productOnShopPageFilter[i]);
-      } else if (
-        productOnShopPageFilter[i].name === productOnShopPageFilter[j].name &&
-        j <= i
-      ) {
-        notDublicate.push(productOnShopPageFilter[i]);
-      }
-    }
-  }
-  productOnShopPageFilter = [...new Set(notDublicate)];
-  const dublicateToo = [];
-  for (let i = 0; i < productOnShopPageFilter.length; i++) {
-    for(let j = 0; j < i; j++){
-      console.log()
-    }
-    for(let k = 0; k < i; k++){
-      
-    }
-  }
+  // const notDublicate = [];
+  // for (let i = 0; i < productOnShopPageFilter.length; i++) {
+  //   for (let j = 0; j < i; j++) {
+  //     if (productOnShopPageFilter[i].name !== productOnShopPageFilter[j].name) {
+  //       notDublicate.push(productOnShopPageFilter[i]);
+  //     } else if (
+  //       productOnShopPageFilter[i].name === productOnShopPageFilter[j].name &&
+  //       j <= i
+  //     ) {
+  //       notDublicate.push(productOnShopPageFilter[i]);
+  //     }
+  //   }
+  // }
+  // productOnShopPageFilter = [...new Set(notDublicate)];
+  // const dublicateToo = [];
   return (
     <div
       className={
@@ -47,73 +40,78 @@ const ProductOnShopPage = ({
       }
     >
      
-      {/* {productOnShopPageFilter.map((product, i) =>
+      {productOnShopPageFilter.map((product, i) =>
         allFilter.categoriesFIlter.map((item, index) =>
-          item.category === product.categories && item.checked ? (
-            <div className="" key={index}>
-              <img className={style.imageProduct} src={product.imgUrl} alt="" />
-              <div className={style.textBox}>
-                {product.newShop && (
-                  <span className={style.all}>
-                    <img src={n} alt="" /> NEW
-                  </span>
-                )}
-                {product.hot && (
-                  <span className={style.all}>
-                    <img src={hotest} alt="" /> HOT
-                  </span>
-                )}
-                {product.top && (
-                  <span className={style.all}>
-                    <img src={topShop} alt="" /> TOP
-                  </span>
-                )}
-                {product.bestSellers && (
-                  <span className={style.all}>
-                    <img src={best} alt="" /> BEST SELLER
-                  </span>
-                )}
-                <br />
-                <span className={style.name}>{product.name}</span>
-                <br />
-                <span className={style.price}>{product.price}</span>
-              </div>
+        item.category === product.categories && item.checked ? (
+          <div className="" key={index}>
+            <img className={style.imageProduct} src={product.imgUrl} alt="" />
+            <div className={style.textBox}>
+              {product.newShop && (
+                <span className={style.all}>
+                  <img src={n} alt="" /> NEW
+                </span>
+              )}
+              {product.hot && (
+                <span className={style.all}>
+                  <img src={hotest} alt="" /> HOT
+                </span>
+              )}
+              {product.top && (
+                <span className={style.all}>
+                  <img src={topShop} alt="" /> TOP
+                </span>
+              )}
+              {product.bestSellers && (
+                <span className={style.all}>
+                  <img src={best} alt="" /> BEST SELLER
+                </span>
+              )}
+              <br />
+              <span className={style.name}>{product.name}</span>
+              <br />
+              <span className={style.price}>{product.price}</span>
             </div>
-          ) : item.category === "All categories" && item.checked ? (
-            <div className="" key={index}>
-              <img className={style.imageProduct} src={product.imgUrl} alt="" />
-              <div className={style.textBox}>
-                {product.newShop && (
-                  <span className={style.all}>
-                    <img src={n} alt="" /> NEW
-                  </span>
-                )}
-                {product.hot && (
-                  <span className={style.all}>
-                    <img src={hotest} alt="" /> HOT
-                  </span>
-                )}
-                {product.top && (
-                  <span className={style.all}>
-                    <img src={topShop} alt="" /> TOP
-                  </span>
-                )}
-                {product.bestSellers && (
-                  <span className={style.all}>
-                    <img src={best} alt="" /> BEST SELLER
-                  </span>
-                )}
-                <br />
-                <span className={style.name}>{product.name}</span>
-                <br />
-                <span className={style.price}>{product.price}</span>
-              </div>
+          </div>
+        ) : item.category === "All categories" && item.checked ? (
+          <div className="" key={index}>
+            <img className={style.imageProduct} src={product.imgUrl} alt="" />
+            <div className={style.textBox}>
+              {product.newShop && (
+                <span className={style.all}>
+                  <img src={n} alt="" /> NEW
+                </span>
+              )}
+              {product.hot && (
+                <span className={style.all}>
+                  <img src={hotest} alt="" /> HOT
+                </span>
+              )}
+              {product.top && (
+                <span className={style.all}>
+                  <img src={topShop} alt="" /> TOP
+                </span>
+              )}
+              {product.bestSellers && (
+                <span className={style.all}>
+                  <img src={best} alt="" /> BEST SELLER
+                </span>
+              )}
+              <br />
+              <span className={style.name}>{product.name}</span>
+              <br />
+              <span className={style.price}>{product.price}</span>
             </div>
-          ) : (
-            ""
-          )
+          </div>
+        ) : (
+          ""
         )
-      )} */}
+      )
+      )}
+      {productOnShopPageFilter.filter((product, index) => (
+        allFilter.colorFilter.filter(item => (
+          console.log(item)
+        ))
+      ))}
     </div>
   );
 };

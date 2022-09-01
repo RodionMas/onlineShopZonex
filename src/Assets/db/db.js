@@ -24,20 +24,6 @@ export const db = [
         "color": "black"
     },
     {
-        "imgUrl": `${i1}`,
-        "newShop": true,
-        "name": "Eye Mesh Boat Shoes",
-        "price": "$" + 220.00,
-        "sale": false,
-        "id": 1,
-        "bestSellers": false,
-        "hot": false,
-        "top": false,
-        "brand": "Vero Moda",
-        "categories": "Shoes",
-        "color": "black"
-    },
-    {
         "imgUrl": `${i2}`,
         "newShop": false,
         "name": "Azure Tote",
