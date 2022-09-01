@@ -46,8 +46,8 @@ const ProductOnShopPage = ({
           : ""
       }
     >
-      {/* ГДЕТО ТАМ ВНИЗУ НУЖНО НАПИСАТЬ ФИЛЬТР ПО ЦВЕТАМ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
-      {productOnShopPageFilter.map((product, i) =>
+     
+      {/* {productOnShopPageFilter.map((product, i) =>
         allFilter.categoriesFIlter.map((item, index) =>
           item.category === product.categories && item.checked ? (
             <div className="" key={index}>
@@ -113,7 +113,7 @@ const ProductOnShopPage = ({
             ""
           )
         )
-      )}
+      )} */}
     </div>
   );
 };
