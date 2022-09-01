@@ -19,8 +19,7 @@ function App() {
   //чтобы фильтровать подукт нужно создать новый массив, ниже - новый массив
   const [newProductFilter, setNewProductFilter] = React.useState(product);
   //Для страницы продуктов в магазине
-  const [productOnShopPageFilter, setProductOnShopPageFilter] =
-    React.useState(product);
+  const [productOnShopPageFilter, setProductOnShopPageFilter] = React.useState([...product]);  
   //Для страницы продуктов в магазине--
   const [activeFilter, setActiveFilter] = React.useState(0);
   const filterMain = (filterItem) => {
@@ -40,19 +39,18 @@ function App() {
   //фильтрация продукта на основной странице--
 
   //SelectedFilteres component
-  const [newSelectedFilter, setNewSelectedFilter] =
-    React.useState([]);
+  const [newSelectedFilter, setNewSelectedFilter] = React.useState([]);
 
   //SelectedFilteres component--
 
   //counter filters
   const [counterCategory, setCounterCategory] = React.useState(1);
-  const [counterColor, setCounterColor] = React.useState(0)
+  const [counterColor, setCounterColor] = React.useState(0);
 
   //counter filters--
 
   //filter checkbox
-  const [stub, setStub] = React.useState(true) // Заглушка
+  const [stub, setStub] = React.useState(true); // Заглушка
   const [allFilter, setAllFilter] = React.useState({
     categoriesFIlter: [
       { category: "All categories", checked: true },
@@ -119,15 +117,13 @@ function App() {
       { discount: "40% - 60% Off", checked: false },
       { discount: "Less Than 40% Off", checked: false },
     ],
-  }
-
-  );
+  });
   //filter checkbox
   React.useEffect(() => {
     setTimeout(() => {
       setActiveMarkenig(true);
     }, 6000);
-  }, [newProductFilter, stub,]);
+  }, [newProductFilter, stub]);
   const closeMarketing = () => {
     setActiveMarkenig(false);
   };

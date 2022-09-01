@@ -24,6 +24,20 @@ export const db = [
         "color": "black"
     },
     {
+        "imgUrl": `${i1}`,
+        "newShop": true,
+        "name": "Eye Mesh Boat Shoes",
+        "price": "$" + 220.00,
+        "sale": false,
+        "id": 1,
+        "bestSellers": false,
+        "hot": false,
+        "top": false,
+        "brand": "Vero Moda",
+        "categories": "Shoes",
+        "color": "black"
+    },
+    {
         "imgUrl": `${i2}`,
         "newShop": false,
         "name": "Azure Tote",
@@ -54,7 +68,7 @@ export const db = [
     {
         "imgUrl": `${i4}`,
         "newShop": false,
-        "name": "Backpack with contrasting buckle",
+        "name": "Backpack with contrasting buckle colorfull",
         "price": "$" + 80.00 + "-" + "$" + 125.00,
         "sale": false,
         "id": 4,
@@ -124,7 +138,7 @@ export const db = [
     {
         "imgUrl": `${i9}`,
         "newShop": false,
-        "name": "Eye Mesh Boat Shoes",
+        "name": "Eye Mesh Boat Shoes female",
         "price": "$" + 220.00,
         "sale": true,
         "id": 9,
@@ -138,7 +152,7 @@ export const db = [
     {
         "imgUrl": `${i10}`,
         "newShop": true,
-        "name": "Azure Tote",
+        "name": "Azure Tote Coat",
         "price": "$" + 290.00,
         "sale": false,
         "id": 10,
