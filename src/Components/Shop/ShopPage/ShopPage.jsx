@@ -16,6 +16,7 @@ const ShopPage = ({
   setCounterCategory,
   counterColor,
   setCounterColor,
+  product,
 }) => {
   //Column number component
   const columnNumber = [3, 4, 5];
@@ -30,6 +31,7 @@ const ShopPage = ({
       <ShopSwiper />
       <BreadCrumbs />
       <ContainerShop
+      product={product}
         stub={stub}
         setStub={setStub}
         allFilter={allFilter}

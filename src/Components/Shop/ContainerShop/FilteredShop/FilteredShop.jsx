@@ -16,6 +16,7 @@ const FilteredShop = ({
   setAllFilter,
   counterColor,
   setCounterColor,
+  product
 }) => {
 
   return (
@@ -31,6 +32,7 @@ const FilteredShop = ({
         setCounterCategory={setCounterCategory}
         productOnShopPageFilter={productOnShopPageFilter}
         setProductOnShopPageFilter={setProductOnShopPageFilter}
+        product={product}
       />
       <ColorShop colorFilter={allFilter.colorFilter}
         setStub={setStub}

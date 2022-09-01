@@ -9,9 +9,15 @@ const CategoriesShop = ({
   setStub,
   counterCategory,
   setCounterCategory,
-  
-  }) => {
+  productOnShopPageFilter,
+  setProductOnShopPageFilter,
+}) => {
+
+  const [selectedCategory, setSelectedCategory] = React.useState([]);
   const [hideContent, setHideContent] = React.useState(false);
+  React.useEffect(()=>{
+    setSelectedCategory(productOnShopPageFilter)
+  },[])
   return (
     <div className={style.wrapper}>
       {!hideContent && (
@@ -48,6 +54,10 @@ const CategoriesShop = ({
                   checked={category.checked}
                   onChange={(e) => {
                     if (e.target.checked) {
+                      let newFilterShop = [...productOnShopPageFilter].filter(item => {
+                        return item.categories === category.category 
+                      })
+                      setProductOnShopPageFilter(newFilterShop)
                       setStub(false);
                       category.checked = e.target.checked;
                       setCounterCategory(counterCategory + 1);
@@ -56,6 +66,7 @@ const CategoriesShop = ({
                         e.target.value,
                       ]);
                     } else if (!e.target.checked) {
+                      setProductOnShopPageFilter(selectedCategory)
                       setStub(true);
                       category.checked = e.target.checked;
                       setCounterCategory(counterCategory - 1);

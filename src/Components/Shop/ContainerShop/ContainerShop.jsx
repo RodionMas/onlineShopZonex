@@ -24,6 +24,7 @@ const ContainerShop = ({
   setCounterCategory,
   counterColor,
   setCounterColor,
+  product,
 }) => {
   return (
     <div className={style.wrapper}>
@@ -45,6 +46,7 @@ const ContainerShop = ({
         setProductOnShopPageFilter={setProductOnShopPageFilter}
         counterColor={counterColor}
         setCounterColor={setCounterColor}
+        product={product}
       />
       <ProductShop
         allFilter={allFilter}

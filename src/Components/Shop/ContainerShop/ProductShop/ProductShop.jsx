@@ -44,6 +44,7 @@ const ProductShop = ({
         allFilter={allFilter}
         activeNumber={activeNumber}
         productOnShopPageFilter={productOnShopPageFilter}
+        setAllFilter={setAllFilter}
       />
     </div>
   );

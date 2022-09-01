@@ -7,7 +7,9 @@ const ColorShop = ({ colorFilter,
   newSelectedFilter,
   setStub,
   counterColor,
-  setCounterColor, }) => {
+  setCounterColor,
+  productOnShopPageFilter,
+  setProductOnShopPageFilter, }) => {
   const [hideContent, setHideContent] = React.useState(false);
   return (
     <div className={style.wrapper}>
@@ -46,6 +48,9 @@ const ColorShop = ({ colorFilter,
                   checked={color.checked}
                   onChange={(e) => {
                     if (e.target.checked) {
+                      setProductOnShopPageFilter([...productOnShopPageFilter].filter(item => {
+                        return item.color === color.color
+                      }))
                       setStub(false);
                       color.checked = e.target.checked;
                       setCounterColor(counterColor + 1);

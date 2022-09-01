@@ -123,7 +123,7 @@ function App() {
     setTimeout(() => {
       setActiveMarkenig(true);
     }, 6000);
-  }, [newProductFilter, stub]);
+  }, [newProductFilter, stub, productOnShopPageFilter]);
   const closeMarketing = () => {
     setActiveMarkenig(false);
   };
@@ -163,6 +163,7 @@ function App() {
               setCounterCategory={setCounterCategory}
               counterColor={counterColor}
               setCounterColor={setCounterColor}
+              product={product}
             />
           }
         ></Route>
