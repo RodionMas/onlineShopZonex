@@ -6,11 +6,6 @@ import ProductShop from "./ProductShop/ProductShop";
 const ContainerShop = ({
   allFilter,
   setAllFilter,
-  colorFilter,
-  sizeFilter,
-  priceFilter,
-  brandFilter,
-  discountFilter,
   columnNumber,
   activeNumberFn,
   activeNumber,
@@ -25,18 +20,18 @@ const ContainerShop = ({
   counterColor,
   setCounterColor,
   product,
+  uniqeArr,
+  onFilterProductColor,
+  offFilterProductColor,
+  onFilterProductCategory,
 }) => {
   return (
     <div className={style.wrapper}>
       <FilteredShop
+        onFilterProductCategory={onFilterProductCategory}
         setStub={setStub}
-        priceFilter={priceFilter}
-        sizeFilter={sizeFilter}
-        colorFilter={colorFilter}
         allFilter={allFilter}
         setAllFilter={setAllFilter}
-        brandFilter={brandFilter}
-        discountFilter={discountFilter}
         setNewSelectedFilter={setNewSelectedFilter}
         newSelectedFilter={newSelectedFilter}
         stub={stub}
@@ -47,6 +42,9 @@ const ContainerShop = ({
         counterColor={counterColor}
         setCounterColor={setCounterColor}
         product={product}
+        uniqeArr={uniqeArr}
+        onFilterProductColor={onFilterProductColor}
+        offFilterProductColor={offFilterProductColor}
       />
       <ProductShop
         allFilter={allFilter}
@@ -64,6 +62,7 @@ const ContainerShop = ({
         setCounterCategory={setCounterCategory}
         counterColor={counterColor}
         setCounterColor={setCounterColor}
+        uniqeArr={uniqeArr}
       />
     </div>
   );

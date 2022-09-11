@@ -16,12 +16,15 @@ const FilteredShop = ({
   setAllFilter,
   counterColor,
   setCounterColor,
-  product
+  uniqeArr,
+  onFilterProductColor,
+  offFilterProductColor,
+  onFilterProductCategory,
 }) => {
-
   return (
     <div>
       <CategoriesShop
+        onFilterProductCategory={onFilterProductCategory}
         setStub={setStub}
         stub={stub}
         newSelectedFilter={newSelectedFilter}
@@ -32,9 +35,12 @@ const FilteredShop = ({
         setCounterCategory={setCounterCategory}
         productOnShopPageFilter={productOnShopPageFilter}
         setProductOnShopPageFilter={setProductOnShopPageFilter}
-        product={product}
       />
-      <ColorShop colorFilter={allFilter.colorFilter}
+      <ColorShop
+        offFilterProductColor={offFilterProductColor}
+        onFilterProductColor={onFilterProductColor}
+        colorFilter={allFilter.colorFilter}
+        uniqeArr={uniqeArr}
         setStub={setStub}
         stub={stub}
         newSelectedFilter={newSelectedFilter}
@@ -45,7 +51,8 @@ const FilteredShop = ({
         productOnShopPageFilter={productOnShopPageFilter}
         setProductOnShopPageFilter={setProductOnShopPageFilter}
         counterColor={counterColor}
-        setCounterColor={setCounterColor} />
+        setCounterColor={setCounterColor}
+      />
       {/* <SizeShop sizeFilter={allFilter.sizeFilter} />
       <PriceShop priceFilter={allFilter.priceFilter} />
       <BrandShop brandFilter={allFilter.brandFilter} />

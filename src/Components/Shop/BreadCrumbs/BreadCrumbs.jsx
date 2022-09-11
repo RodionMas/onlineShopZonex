@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 const BreadCrumbs = () => {
   const breadCrumbsLink = useParams();
-  const [counter, setCounter] = React.useState(0);
+  const [counterBread, setCounterBread] = React.useState(0);
 
   React.useEffect(() => {
     for (let value in breadCrumbsLink) {
       let countValue = [];
-      setCounter([...countValue, value].length);
+      setCounterBread([...countValue, value].length);
     }
   }, []);
   return (
@@ -21,7 +21,7 @@ const BreadCrumbs = () => {
         <span className={style.separator}> / </span>
         <Link
           to={`/${breadCrumbsLink.home}/${breadCrumbsLink.shop}`}
-          className={counter === 1 ? style.active : "" + '' + style.link}
+          className={counterBread === 1 ? style.active : "" + '' + style.link}
         >
           {breadCrumbsLink.shop.toUpperCase()}
         </Link>

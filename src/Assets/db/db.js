@@ -21,7 +21,7 @@ export const db = [
         "top": false,
         "brand": "Vero Moda",
         "categories": "Shoes",
-        "color": "black"
+        "color": ["black"]
     },
     {
         "imgUrl": `${i2}`,
@@ -35,7 +35,7 @@ export const db = [
         "top": false,
         "brand": "Betty Barclay",
         "categories": "Dresses",
-        "color": "red"
+        "color": ["red", "summer"]
     },
     {
         "imgUrl": `${i3}`,
@@ -49,7 +49,7 @@ export const db = [
         "top": false,
         "brand": "Gerry Weber",
         "categories": "Jacket",
-        "color": "grey"
+        "color": ["grey"]
     },
     {
         "imgUrl": `${i4}`,
@@ -63,7 +63,7 @@ export const db = [
         "top": false,
         "brand": "Desigual",
         "categories": "Sweatshirts",
-        "color": "colorful"
+        "color": ["colorful", "yellow", "blue", "white"]
     },
     {
         "imgUrl": `${i5}`,
@@ -77,7 +77,7 @@ export const db = [
         "top": false,
         "brand": "Jack & Jones",
         "categories": "Shirts",
-        "color": "blue"
+        "color": ["blue", "white"]
     },
     {
         "imgUrl": `${i6}`,
@@ -91,7 +91,7 @@ export const db = [
         "top": false,
         "brand": "Noom",
         "categories": "Summer",
-        "color": "blue"
+        "color": ["blue", "summer"]
     },
     {
         "imgUrl": `${i7}`,
@@ -105,7 +105,7 @@ export const db = [
         "top": true,
         "brand": "EMPORIO ARMANI",
         "categories": "Sweatshirts",
-        "color": "green"
+        "color": ["green"]
     },
     {
         "imgUrl": `${i8}`,
@@ -119,7 +119,7 @@ export const db = [
         "top": false,
         "brand": "S.Oliver",
         "categories": "Accessories",
-        "color": "yellow"
+        "color": ["yellow"]
     },
     {
         "imgUrl": `${i9}`,
@@ -133,7 +133,7 @@ export const db = [
         "top": false,
         "brand": "Marc OPolo",
         "categories": "Shoes",
-        "color": "blue"
+        "color": ["blue", "colorful"]
     },
     {
         "imgUrl": `${i10}`,
@@ -147,6 +147,6 @@ export const db = [
         "top": false,
         "brand": "Karl Lagerfeld",
         "categories": "Coats",
-        "color": "black"
+        "color": ["black"]
     }
 ]

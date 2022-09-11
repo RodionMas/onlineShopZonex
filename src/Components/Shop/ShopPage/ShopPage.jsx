@@ -17,6 +17,10 @@ const ShopPage = ({
   counterColor,
   setCounterColor,
   product,
+  uniqeArr,
+  onFilterProductColor,
+  offFilterProductColor,
+  onFilterProductCategory,
 }) => {
   //Column number component
   const columnNumber = [3, 4, 5];
@@ -31,7 +35,9 @@ const ShopPage = ({
       <ShopSwiper />
       <BreadCrumbs />
       <ContainerShop
-      product={product}
+        offFilterProductColor={offFilterProductColor}
+        uniqeArr={uniqeArr}
+        product={product}
         stub={stub}
         setStub={setStub}
         allFilter={allFilter}
@@ -47,6 +53,8 @@ const ShopPage = ({
         setCounterCategory={setCounterCategory}
         counterColor={counterColor}
         setCounterColor={setCounterColor}
+        onFilterProductColor={onFilterProductColor}
+        onFilterProductCategory={onFilterProductCategory}
       />
     </div>
   );

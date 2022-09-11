@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import { db } from "./Assets/db/db";
 import Home from "./Components/Home/Home";
+import ProductPage from './Components/Product/ProductPage'
 import WrapperNav from "./Components/Home/WrapperNav/WrapperNav";
 import { Routes, Route } from "react-router-dom";
 import ShopPage from "./Components/Shop/ShopPage/ShopPage";
@@ -19,7 +20,36 @@ function App() {
   //чтобы фильтровать подукт нужно создать новый массив, ниже - новый массив
   const [newProductFilter, setNewProductFilter] = React.useState(product);
   //Для страницы продуктов в магазине
-  const [productOnShopPageFilter, setProductOnShopPageFilter] = React.useState([...product]);  
+  const [productOnShopPageFilter, setProductOnShopPageFilter] =
+    React.useState(product);
+  const [newProductOnShopPageFilter, setNewProductOnShopPageFilter] =
+    React.useState([]);
+  const [uniqeArr, setUniqeArr] = React.useState([]);
+
+  const onFilterProductColor = (filter) => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.color.includes(filter) ? product : "";
+    });
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+    
+  };
+  const onFilterProductCategory = (filter) => {
+    //если массив пустой тогда выполняй это если нет тогда не выполняй а придумай условие
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.categories === filter ? product : "";
+    });
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+   
+  };
+  const offFilterProductColor = (filter) => {
+    let newFilter = uniqeArr.filter((product) => {
+      return !product.color.includes(filter) ? product : '';
+    });
+    setUniqeArr(newFilter)
+  };
+
   //Для страницы продуктов в магазине--
   const [activeFilter, setActiveFilter] = React.useState(0);
   const filterMain = (filterItem) => {
@@ -44,7 +74,7 @@ function App() {
   //SelectedFilteres component--
 
   //counter filters
-  const [counterCategory, setCounterCategory] = React.useState(1);
+  const [counterCategory, setCounterCategory] = React.useState(0);
   const [counterColor, setCounterColor] = React.useState(0);
 
   //counter filters--
@@ -53,12 +83,10 @@ function App() {
   const [stub, setStub] = React.useState(true); // Заглушка
   const [allFilter, setAllFilter] = React.useState({
     categoriesFIlter: [
-      { category: "All categories", checked: true },
       { category: "Accessories", checked: false },
       { category: "Dresses", checked: false },
       { category: "Coats", checked: false },
       { category: "Clothes", checked: false },
-      { category: "T-Shirt", checked: false },
       { category: "Summer", checked: false },
       { category: "Shirts", checked: false },
       { category: "Jacket", checked: false },
@@ -123,7 +151,13 @@ function App() {
     setTimeout(() => {
       setActiveMarkenig(true);
     }, 6000);
-  }, [newProductFilter, stub, productOnShopPageFilter]);
+  }, [
+    newProductFilter,
+    stub,
+    productOnShopPageFilter,
+    newProductOnShopPageFilter,
+    uniqeArr,
+  ]);
   const closeMarketing = () => {
     setActiveMarkenig(false);
   };
@@ -151,6 +185,9 @@ function App() {
           path="/:home/:shop/"
           element={
             <ShopPage
+              offFilterProductColor={offFilterProductColor}
+              onFilterProductColor={onFilterProductColor}
+              onFilterProductCategory={onFilterProductCategory}
               newSelectedFilter={newSelectedFilter}
               setNewSelectedFilter={setNewSelectedFilter}
               productOnShopPageFilter={productOnShopPageFilter}
@@ -164,9 +201,13 @@ function App() {
               counterColor={counterColor}
               setCounterColor={setCounterColor}
               product={product}
+              uniqeArr={uniqeArr}
             />
           }
         ></Route>
+        <Route path="/:home/:shop/:product" element={<ProductPage />}>
+
+        </Route>
       </Routes>
     </>
   );

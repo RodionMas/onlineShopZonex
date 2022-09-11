@@ -2,19 +2,24 @@ import React from "react";
 import style from "./ColorShop.module.css";
 import close from "../../../../../Assets/img/close.png";
 
-const ColorShop = ({ colorFilter,
+const ColorShop = ({
+  colorFilter,
   setNewSelectedFilter,
   newSelectedFilter,
   setStub,
   counterColor,
   setCounterColor,
   productOnShopPageFilter,
-  setProductOnShopPageFilter, }) => {
+  setProductOnShopPageFilter,
+  uniqeArr,
+  onFilterProductColor,
+  offFilterProductColor,
+}) => {
   const [hideContent, setHideContent] = React.useState(false);
+
   return (
     <div className={style.wrapper}>
       {!hideContent && (
-
         <div className={style.hideBox}>
           <button
             onClick={() => {
@@ -41,16 +46,14 @@ const ColorShop = ({ colorFilter,
           <hr className={style.smallLine} />
         </div>
         {!hideContent && (
-          <div className={style.colorCheks}>
+          <form className={style.colorCheks}>
             {colorFilter.map((color, index) => (
               <label key={index} htmlFor={"colorId" + index}>
                 <input
                   checked={color.checked}
                   onChange={(e) => {
                     if (e.target.checked) {
-                      setProductOnShopPageFilter([...productOnShopPageFilter].filter(item => {
-                        return item.color === color.color
-                      }))
+                      onFilterProductColor(color.color)
                       setStub(false);
                       color.checked = e.target.checked;
                       setCounterColor(counterColor + 1);
@@ -58,7 +61,9 @@ const ColorShop = ({ colorFilter,
                         ...newSelectedFilter,
                         e.target.value,
                       ]);
+
                     } else if (!e.target.checked) {
+                      offFilterProductColor(color.color)
                       setStub(true);
                       color.checked = e.target.checked;
                       setCounterColor(counterColor - 1);
@@ -77,7 +82,7 @@ const ColorShop = ({ colorFilter,
                 <span>{color.color}</span>
               </label>
             ))}
-          </div>
+          </form>
         )}
         <hr />
       </div>

@@ -4,15 +4,17 @@ import n from "../../../../../Assets/img/new.png";
 import hotest from "../../../../../Assets/img/hot.png";
 import topShop from "../../../../../Assets/img/top.png";
 import best from "../../../../../Assets/img/best.png";
+import { Link } from "react-router-dom";
 
 const ProductOnShopPage = ({
   productOnShopPageFilter,
   activeNumber,
-  allFilter,
-  setProductOnShopPageFilter,
-  setAllFilter,
+  // allFilter,
+  // setProductOnShopPageFilter,
+  // setAllFilter,
+  // newProductOnShopPageFilter,
+  uniqeArr,
 }) => {
-
   return (
     <div
       className={
@@ -25,38 +27,81 @@ const ProductOnShopPage = ({
           : ""
       }
     >
-     
-      {productOnShopPageFilter.map((product, i) =>
-         <div className="" key={i}>
-         <img className={style.imageProduct} src={product.imgUrl} alt="" />
-         <div className={style.textBox}>
-           {product.newShop && (
-             <span className={style.all}>
-               <img src={n} alt="" /> NEW
-             </span>
-           )}
-           {product.hot && (
-             <span className={style.all}>
-               <img src={hotest} alt="" /> HOT
-             </span>
-           )}
-           {product.top && (
-             <span className={style.all}>
-               <img src={topShop} alt="" /> TOP
-             </span>
-           )}
-           {product.bestSellers && (
-             <span className={style.all}>
-               <img src={best} alt="" /> BEST SELLER
-             </span>
-           )}
-           <br />
-           <span className={style.name}>{product.name}</span>
-           <br />
-           <span className={style.price}>{product.price}</span>
-         </div>
-       </div>
-      )}
+      {uniqeArr.length === 0
+        ? productOnShopPageFilter.map((product, i) => (
+              <div className="" key={i}>
+                <Link to='/home/shop/product'>
+                <img
+                  className={style.imageProduct}
+                  src={product.imgUrl}
+                  alt=""
+                />
+                <div className={style.textBox}>
+                  {product.newShop && (
+                    <span className={style.all}>
+                      <img src={n} alt="" /> NEW
+                    </span>
+                  )}
+                  {product.hot && (
+                    <span className={style.all}>
+                      <img src={hotest} alt="" /> HOT
+                    </span>
+                  )}
+                  {product.top && (
+                    <span className={style.all}>
+                      <img src={topShop} alt="" /> TOP
+                    </span>
+                  )}
+                  {product.bestSellers && (
+                    <span className={style.all}>
+                      <img src={best} alt="" /> BEST SELLER
+                    </span>
+                  )}
+                  <br />
+                  <span className={style.name}>{product.name}</span>
+                  <br />
+                  <span className={style.price}>{product.price}</span>
+                </div>
+                </Link>
+              </div>
+          ))
+        : uniqeArr.map((product, i) => (
+            <Link to={'home/shop/product'}> 
+              <div className="" key={i}>
+                <img
+                  className={style.imageProduct}
+                  src={product.imgUrl}
+                  alt=""
+                />
+                <div className={style.textBox}>
+                  {product.newShop && (
+                    <span className={style.all}>
+                      <img src={n} alt="" /> NEW
+                    </span>
+                  )}
+                  {product.hot && (
+                    <span className={style.all}>
+                      <img src={hotest} alt="" /> HOT
+                    </span>
+                  )}
+                  {product.top && (
+                    <span className={style.all}>
+                      <img src={topShop} alt="" /> TOP
+                    </span>
+                  )}
+                  {product.bestSellers && (
+                    <span className={style.all}>
+                      <img src={best} alt="" /> BEST SELLER
+                    </span>
+                  )}
+                  <br />
+                  <span className={style.name}>{product.name}</span>
+                  <br />
+                  <span className={style.price}>{product.price}</span>
+                </div>
+              </div>
+            </Link>
+          ))}
     </div>
   );
 };
