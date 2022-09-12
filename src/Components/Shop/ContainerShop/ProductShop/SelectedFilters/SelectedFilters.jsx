@@ -10,6 +10,8 @@ const SelectedFilters = ({
   setCounterCategory,
   counterColor,
   setCounterColor,
+  counterSize,
+  setCounterSize,
 }) => {
   return (
     <div className={style.wrapper}>
@@ -43,6 +45,29 @@ const SelectedFilters = ({
             <img
               onClick={() => {
                 setCounterColor(counterColor - 1);
+                item.checked = false;
+                if (stub) {
+                  setStub(false);
+                } else {
+                  setStub(true);
+                }
+              }}
+              className={style.close}
+              src={close}
+              alt="close"
+            />
+          </span>
+        ) : (
+          ""
+        )
+      )}
+        {allFilter.sizeFilter.map((item, i) =>
+        item.checked ? (
+          <span key={i} className={style.filterText}>
+            {item.size}{" "}
+            <img
+              onClick={() => {
+                setCounterColor(counterSize - 1);
                 item.checked = false;
                 if (stub) {
                   setStub(false);

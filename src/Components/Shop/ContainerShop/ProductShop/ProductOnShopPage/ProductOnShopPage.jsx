@@ -21,87 +21,89 @@ const ProductOnShopPage = ({
         activeNumber === 4
           ? style.wrapper4
           : activeNumber === 3
-          ? style.wrapper3
-          : activeNumber === 5
-          ? style.wrapper5
-          : ""
+            ? style.wrapper3
+            : activeNumber === 5
+              ? style.wrapper5
+              : ""
       }
     >
       {uniqeArr.length === 0
         ? productOnShopPageFilter.map((product, i) => (
-              <div className="" key={i}>
-                <Link to='/home/shop/product'>
-                <img
-                  className={style.imageProduct}
-                  src={product.imgUrl}
-                  alt=""
-                />
-                <div className={style.textBox}>
-                  {product.newShop && (
-                    <span className={style.all}>
-                      <img src={n} alt="" /> NEW
-                    </span>
-                  )}
-                  {product.hot && (
-                    <span className={style.all}>
-                      <img src={hotest} alt="" /> HOT
-                    </span>
-                  )}
-                  {product.top && (
-                    <span className={style.all}>
-                      <img src={topShop} alt="" /> TOP
-                    </span>
-                  )}
-                  {product.bestSellers && (
-                    <span className={style.all}>
-                      <img src={best} alt="" /> BEST SELLER
-                    </span>
-                  )}
-                  <br />
-                  <span className={style.name}>{product.name}</span>
-                  <br />
-                  <span className={style.price}>{product.price}</span>
-                </div>
-                </Link>
-              </div>
-          ))
-        : uniqeArr.map((product, i) => (
-            <Link to={'home/shop/product'}> 
-              <div className="" key={i}>
-                <img
-                  className={style.imageProduct}
-                  src={product.imgUrl}
-                  alt=""
-                />
-                <div className={style.textBox}>
-                  {product.newShop && (
-                    <span className={style.all}>
-                      <img src={n} alt="" /> NEW
-                    </span>
-                  )}
-                  {product.hot && (
-                    <span className={style.all}>
-                      <img src={hotest} alt="" /> HOT
-                    </span>
-                  )}
-                  {product.top && (
-                    <span className={style.all}>
-                      <img src={topShop} alt="" /> TOP
-                    </span>
-                  )}
-                  {product.bestSellers && (
-                    <span className={style.all}>
-                      <img src={best} alt="" /> BEST SELLER
-                    </span>
-                  )}
-                  <br />
-                  <span className={style.name}>{product.name}</span>
-                  <br />
-                  <span className={style.price}>{product.price}</span>
-                </div>
+          <div className="" key={i}>
+            <Link to='/home/shop/product'>
+              <img
+                className={style.imageProduct}
+                src={product.imgUrl}
+                alt=""
+              />
+              <div className={style.textBox}>
+                {product.newShop && (
+                  <span className={style.all}>
+                    <img src={n} alt="" /> NEW
+                  </span>
+                )}
+                {product.hot && (
+                  <span className={style.all}>
+                    <img src={hotest} alt="" /> HOT
+                  </span>
+                )}
+                {product.top && (
+                  <span className={style.all}>
+                    <img src={topShop} alt="" /> TOP
+                  </span>
+                )}
+                {product.bestSellers && (
+                  <span className={style.all}>
+                    <img src={best} alt="" /> BEST SELLER
+                  </span>
+                )}
+                <br />
+                <span className={style.name}>{product.name}</span>
+                <br />
+                <span className={style.price}>{product.price}</span>
               </div>
             </Link>
-          ))}
+          </div>
+        ))
+        : uniqeArr.map((product, i) => (
+
+          <div className="" key={i}>
+            <Link to={'/home/shop/product'}>
+              <img
+                className={style.imageProduct}
+                src={product.imgUrl}
+                alt=""
+              />
+              <div className={style.textBox}>
+                {product.newShop && (
+                  <span className={style.all}>
+                    <img src={n} alt="" /> NEW
+                  </span>
+                )}
+                {product.hot && (
+                  <span className={style.all}>
+                    <img src={hotest} alt="" /> HOT
+                  </span>
+                )}
+                {product.top && (
+                  <span className={style.all}>
+                    <img src={topShop} alt="" /> TOP
+                  </span>
+                )}
+                {product.bestSellers && (
+                  <span className={style.all}>
+                    <img src={best} alt="" /> BEST SELLER
+                  </span>
+                )}
+                <br />
+                <span className={style.name}>{product.name}</span>
+                <br />
+                <span className={style.price}>{product.price}</span>
+              </div>
+            </Link>
+          </div>
+
+        ))}
     </div>
   );
 };

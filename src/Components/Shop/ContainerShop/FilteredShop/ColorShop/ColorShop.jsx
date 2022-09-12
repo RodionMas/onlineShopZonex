@@ -9,9 +9,6 @@ const ColorShop = ({
   setStub,
   counterColor,
   setCounterColor,
-  productOnShopPageFilter,
-  setProductOnShopPageFilter,
-  uniqeArr,
   onFilterProductColor,
   offFilterProductColor,
 }) => {

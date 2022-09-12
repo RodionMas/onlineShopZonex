@@ -24,6 +24,9 @@ const ContainerShop = ({
   onFilterProductColor,
   offFilterProductColor,
   onFilterProductCategory,
+  offFilterProductCategory,
+  counterSize,
+  setCounterSize,
 }) => {
   return (
     <div className={style.wrapper}>
@@ -45,6 +48,9 @@ const ContainerShop = ({
         uniqeArr={uniqeArr}
         onFilterProductColor={onFilterProductColor}
         offFilterProductColor={offFilterProductColor}
+        offFilterProductCategory={offFilterProductCategory}
+        counterSize={counterSize}
+        setCounterSize={setCounterSize}
       />
       <ProductShop
         allFilter={allFilter}
@@ -63,6 +69,8 @@ const ContainerShop = ({
         counterColor={counterColor}
         setCounterColor={setCounterColor}
         uniqeArr={uniqeArr}
+        counterSize={counterSize}
+        setCounterSize={setCounterSize}
       />
     </div>
   );

@@ -21,7 +21,8 @@ export const db = [
         "top": false,
         "brand": "Vero Moda",
         "categories": "Shoes",
-        "color": ["black"]
+        "color": ["black"],
+        "size": ['24', '29', '30', '31']
     },
     {
         "imgUrl": `${i2}`,
@@ -35,7 +36,8 @@ export const db = [
         "top": false,
         "brand": "Betty Barclay",
         "categories": "Dresses",
-        "color": ["red", "summer"]
+        "color": ["red", "summer"],
+        "size": ['23', '24', '29']
     },
     {
         "imgUrl": `${i3}`,
@@ -49,7 +51,8 @@ export const db = [
         "top": false,
         "brand": "Gerry Weber",
         "categories": "Jacket",
-        "color": ["grey"]
+        "color": ["grey"],
+        "size": ['23', '24', '25', '29']
     },
     {
         "imgUrl": `${i4}`,
@@ -63,7 +66,8 @@ export const db = [
         "top": false,
         "brand": "Desigual",
         "categories": "Sweatshirts",
-        "color": ["colorful", "yellow", "blue", "white"]
+        "color": ["colorful", "yellow", "blue", "white"],
+        "size": ['23', '24', '25', '29', '30', '31']
     },
     {
         "imgUrl": `${i5}`,
@@ -77,7 +81,8 @@ export const db = [
         "top": false,
         "brand": "Jack & Jones",
         "categories": "Shirts",
-        "color": ["blue", "white"]
+        "color": ["blue", "white"],
+        "size": ['23', '24', '25', '27']
     },
     {
         "imgUrl": `${i6}`,
@@ -91,7 +96,8 @@ export const db = [
         "top": false,
         "brand": "Noom",
         "categories": "Summer",
-        "color": ["blue", "summer"]
+        "color": ["blue", "summer"],
+        "size": ['23', '24', '25', '26', '29']
     },
     {
         "imgUrl": `${i7}`,
@@ -105,7 +111,8 @@ export const db = [
         "top": true,
         "brand": "EMPORIO ARMANI",
         "categories": "Sweatshirts",
-        "color": ["green"]
+        "color": ["green"],
+        "size": ['23', '24', '25', '29', '31']
     },
     {
         "imgUrl": `${i8}`,
@@ -119,7 +126,8 @@ export const db = [
         "top": false,
         "brand": "S.Oliver",
         "categories": "Accessories",
-        "color": ["yellow"]
+        "color": ["yellow"],
+        "size": ['23', '24', '25', '28', '29', '30']
     },
     {
         "imgUrl": `${i9}`,
@@ -133,7 +141,8 @@ export const db = [
         "top": false,
         "brand": "Marc OPolo",
         "categories": "Shoes",
-        "color": ["blue", "colorful"]
+        "color": ["blue", "colorful"],
+        "size": ['27', '24', '25', '29']
     },
     {
         "imgUrl": `${i10}`,
@@ -147,6 +156,7 @@ export const db = [
         "top": false,
         "brand": "Karl Lagerfeld",
         "categories": "Coats",
-        "color": ["black"]
+        "color": ["black"],
+        "size": ['23', '24', '25', '29', '30']
     }
 ]

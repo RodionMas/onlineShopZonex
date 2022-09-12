@@ -26,27 +26,36 @@ function App() {
     React.useState([]);
   const [uniqeArr, setUniqeArr] = React.useState([]);
 
+  //Category
+  const onFilterProductCategory = (filter) => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.categories === filter ? product : "";
+    });
+      newProductOnShopPageFilter.push(...newFilter);
+      setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  };
+  const offFilterProductCategory = (filter) => {
+    let newFilter = uniqeArr.filter((product) => {
+      return product.categories !== filter
+    });
+    setNewProductOnShopPageFilter(newFilter)
+    setUniqeArr(newFilter)
+  };
+  //Color
   const onFilterProductColor = (filter) => {
     let newFilter = [...productOnShopPageFilter].filter((product) => {
       return product.color.includes(filter) ? product : "";
     });
-    newProductOnShopPageFilter.push(...newFilter);
-    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
     
-  };
-  const onFilterProductCategory = (filter) => {
-    //если массив пустой тогда выполняй это если нет тогда не выполняй а придумай условие
-    let newFilter = [...productOnShopPageFilter].filter((product) => {
-      return product.categories === filter ? product : "";
-    });
-    newProductOnShopPageFilter.push(...newFilter);
-    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
-   
+      newProductOnShopPageFilter.push(...newFilter);
+      setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+    
   };
   const offFilterProductColor = (filter) => {
     let newFilter = uniqeArr.filter((product) => {
-      return !product.color.includes(filter) ? product : '';
+      return !product.color.includes(filter)
     });
+    setNewProductOnShopPageFilter(newFilter)
     setUniqeArr(newFilter)
   };
 
@@ -76,7 +85,7 @@ function App() {
   //counter filters
   const [counterCategory, setCounterCategory] = React.useState(0);
   const [counterColor, setCounterColor] = React.useState(0);
-
+  const [counterSize, setCounterSize] = React.useState(0)
   //counter filters--
 
   //filter checkbox
@@ -185,6 +194,7 @@ function App() {
           path="/:home/:shop/"
           element={
             <ShopPage
+              offFilterProductCategory={offFilterProductCategory}
               offFilterProductColor={offFilterProductColor}
               onFilterProductColor={onFilterProductColor}
               onFilterProductCategory={onFilterProductCategory}
@@ -202,6 +212,8 @@ function App() {
               setCounterColor={setCounterColor}
               product={product}
               uniqeArr={uniqeArr}
+              counterSize={counterSize}
+              setCounterSize={setCounterSize}
             />
           }
         ></Route>

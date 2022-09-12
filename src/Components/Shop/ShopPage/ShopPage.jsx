@@ -21,6 +21,9 @@ const ShopPage = ({
   onFilterProductColor,
   offFilterProductColor,
   onFilterProductCategory,
+  offFilterProductCategory,
+  counterSize,
+  setCounterSize,
 }) => {
   //Column number component
   const columnNumber = [3, 4, 5];
@@ -35,6 +38,7 @@ const ShopPage = ({
       <ShopSwiper />
       <BreadCrumbs />
       <ContainerShop
+        offFilterProductCategory={offFilterProductCategory}
         offFilterProductColor={offFilterProductColor}
         uniqeArr={uniqeArr}
         product={product}
@@ -55,6 +59,8 @@ const ShopPage = ({
         setCounterColor={setCounterColor}
         onFilterProductColor={onFilterProductColor}
         onFilterProductCategory={onFilterProductCategory}
+        counterSize={counterSize}
+        setCounterSize={setCounterSize}
       />
     </div>
   );
