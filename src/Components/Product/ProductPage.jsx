@@ -15,6 +15,8 @@ const ProductPage = ({
   setCounterProductPage,
   counterProductPage,
   setActiveLinkNav,
+  productBag,
+  setProductBag,
 }) => {
   const [paramsProduct, setParamsProduct] = React.useState(useParams());
   const [valueProduct, setValueProduct] = React.useState({});
@@ -36,6 +38,8 @@ const ProductPage = ({
         productOnShopPageFilter={productOnShopPageFilter}
         setCounterProductPage={setCounterProductPage}
         counterProductPage={counterProductPage}
+        productBag={productBag}
+        setProductBag={setProductBag}
       />
       <ProductDescription valueProduct={valueProduct.productInfo} />
       <RelatedProduct

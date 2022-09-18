@@ -6,6 +6,7 @@ import ProductPage from "./Components/Product/ProductPage";
 import WrapperNav from "./Components/Home/WrapperNav/WrapperNav";
 import { Routes, Route } from "react-router-dom";
 import ShopPage from "./Components/Shop/ShopPage/ShopPage";
+import Bag from "./Components/Bag/Bag";
 function App() {
   //Для выбранной ссылки в меню навигации
   const [activeLinkNav, setActiveLinkNav] = React.useState(0);
@@ -231,6 +232,21 @@ function App() {
   const [counterProductPage, setCounterProductPage] = React.useState(1);
   //Counter Product Page--
 
+  //Bag visible
+  const [bagVisible, setBagVisible] = React.useState(false)
+  const bagVisibleFn = () => {
+    if(bagVisible === true){
+      setBagVisible(false)
+    } else {
+      setBagVisible(true)
+    }
+  }
+  //Bag visible--
+
+  //Product Bag
+  const [productBag, setProductBag] = React.useState([])
+  //Product Bag--
+
   React.useEffect(() => {
     setTimeout(() => {
       setActiveMarkenig(true);
@@ -250,7 +266,10 @@ function App() {
       <WrapperNav
         activeLinkNav={activeLinkNav}
         setActiveLinkNav={setActiveLinkNav}
+        bagVisibleFn={bagVisibleFn}
+        bagVisible={bagVisible}
       />
+      <Bag bagVisible={bagVisible} />
       <Routes>
         <Route
           path="/"
@@ -325,6 +344,8 @@ function App() {
               setSelectASize={setSelectASize}
               setCounterProductPage={setCounterProductPage}
               counterProductPage={counterProductPage}
+              productBag={productBag}
+              setProductBag={setProductBag}
             />
           }
         />

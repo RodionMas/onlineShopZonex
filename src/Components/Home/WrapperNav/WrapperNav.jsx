@@ -4,13 +4,13 @@ import Logo from '../Header/Logo/Logo';
 import Nav from '../Header/Nav/Nav';
 import style from './WrapperNav.module.css'
 
-const WrapperNav = ({setActiveLinkNav, activeLinkNav}) => {
+const WrapperNav = ({setActiveLinkNav, activeLinkNav, bagVisibleFn, bagVisible }) => {
     return (
         <div className={style.wrapper}>
             <Nav activeLinkNav={activeLinkNav} 
             setActiveLinkNav={setActiveLinkNav}/>
             <Logo />
-            <IconNav />
+            <IconNav bagVisible={bagVisible} bagVisibleFn={bagVisibleFn} />
         </div>
     );
 };

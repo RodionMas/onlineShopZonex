@@ -18,6 +18,8 @@ const AboutProduct = ({
   setSelectASize,
   setCounterProductPage,
   counterProductPage,
+  productBag,
+  setProductBag,
 }) => {
   return (
     <div className={style.wrapper}>
@@ -36,8 +38,11 @@ const AboutProduct = ({
         setSelectASize={setSelectASize}
       />
       <AddCart
+        valueProduct={valueProduct}
         setCounterProductPage={setCounterProductPage}
         counterProductPage={counterProductPage}
+        productBag={productBag}
+        setProductBag={setProductBag}
       />
       <TagsProduct valueProduct={valueProduct} />
       <SocialProduct />

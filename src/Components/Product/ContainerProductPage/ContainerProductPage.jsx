@@ -10,6 +10,8 @@ const ContainerProductPage = ({
   setSelectASize,
   setCounterProductPage,
   counterProductPage,
+  productBag,
+  setProductBag,
 }) => {
   return (
     <div className={style.wrapper}>
@@ -22,6 +24,8 @@ const ContainerProductPage = ({
         setSelectAColor={setSelectAColor}
         setCounterProductPage={setCounterProductPage}
         counterProductPage={counterProductPage}
+        productBag={productBag}
+        setProductBag={setProductBag}
       />
     </div>
   );

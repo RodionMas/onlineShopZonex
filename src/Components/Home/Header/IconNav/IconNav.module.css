@@ -1,12 +1,13 @@
 .wrapper{
     margin-right: 10px;
+    width: 106px;
 }
 .listIcon{
     display: flex;
 }
-.itemIcon + .itemIcon{
-    margin-left: 25px;
-}
+/* .itemIcon + .itemIcon{
+
+} */
 .bag{
     color: #fff;
     background: #151515;
@@ -16,3 +17,32 @@
     position: relative;
     bottom: 5px;
 }
+li button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+.close {
+    bottom: 13px;
+    right: -5px;
+    position: relative;
+    width: 0;
+    height: 0;
+    opacity: 0.3;
+    }
+    .close:hover {
+    opacity: 1;
+    }
+    .close:before, .close:after {
+    position: absolute;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+    }
+    .close:before {
+    transform: rotate(45deg);
+    }
+    .close:after {
+    transform: rotate(-45deg);
+    }

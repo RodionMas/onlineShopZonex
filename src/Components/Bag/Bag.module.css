@@ -1,0 +1,31 @@
+.wrapperHidden{
+    height: 0vh;
+    width: 700px;
+    position: absolute;
+    z-index: 10;
+    top: -504px;
+    right: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #fff;
+    opacity: 0.9;
+    transition: all 1s;
+}
+.wrapper{
+    height: 100vh;
+    width: 700px;
+    position: absolute;
+    z-index: 10;
+    top: 50px;
+    right: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #fff;
+    opacity: 0.9;
+    transition: all 1s;
+}
+.cart{
+    text-align: center;
+    margin-top: 20px;
+}
+.wishlist{
+    text-align: center;
+}
