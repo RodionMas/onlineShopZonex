@@ -18,10 +18,10 @@ const ProductOnShopPage = ({
         activeNumber === 4
           ? style.wrapper4
           : activeNumber === 3
-          ? style.wrapper3
-          : activeNumber === 5
-          ? style.wrapper5
-          : ""
+            ? style.wrapper3
+            : activeNumber === 5
+              ? style.wrapper5
+              : ""
       }
     >
       {uniqeArr.length === 0
