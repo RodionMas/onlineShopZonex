@@ -20,6 +20,10 @@ const ProductShop = ({
   setCounterColor,
   setProductOnShopPageFilter,
   uniqeArr,
+  counterSize,
+  setCounterSize,
+  offFilterProductColor,
+  offFilterProductCategory,
 }) => {
   return (
     <div>
@@ -39,6 +43,10 @@ const ProductShop = ({
         setCounterCategory={setCounterCategory}
         counterColor={counterColor}
         setCounterColor={setCounterColor}
+        counterSize={counterSize}
+        setCounterSize={setCounterSize}
+        offFilterProductCategory={offFilterProductCategory}
+        offFilterProductColor={offFilterProductColor}
       />
       <ProductOnShopPage
         uniqeArr={uniqeArr}

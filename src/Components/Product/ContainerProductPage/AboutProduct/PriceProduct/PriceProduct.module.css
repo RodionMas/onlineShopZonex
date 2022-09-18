@@ -1,0 +1,25 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+}
+.price span{
+    color: #111;
+    font-weight: bold;
+    font-size: 24px;
+}
+.discount{
+    margin-left: 23px;
+}
+.discount span{
+    position: relative;
+    color: #959595;
+    font-size: 16px;
+}
+.line{
+    top: -5px;
+    width: 65px;
+    position: absolute;
+    color: #959595;
+}

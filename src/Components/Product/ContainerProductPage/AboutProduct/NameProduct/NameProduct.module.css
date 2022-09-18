@@ -1,0 +1,14 @@
+.nameProduct{
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+  .all {
+    color: #111111;
+    font-weight: 700;
+  }
+  .titleName {
+    font-size: 24px;
+    color: #111111;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+  }

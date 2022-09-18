@@ -13,7 +13,7 @@ import "swiper/css/thumbs";
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import style from "./SwiperProductPage.module.css";
-const SwiperProductPage = () => {
+const SwiperProductPage = ({valueProduct}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <div className={style.wrapper}>
@@ -25,11 +25,13 @@ const SwiperProductPage = () => {
         freeMode={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiperProduct"
+        style={{
+          "width": "70px",
+        }}
       >
         <SwiperSlide>
-          <img src={heroProduct} />
+          <img src={valueProduct.imgUrl} />
         </SwiperSlide>
-
         <SwiperSlide>
           <img src={smallImg} />
         </SwiperSlide>
@@ -38,6 +40,9 @@ const SwiperProductPage = () => {
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
+          "position": "relative",
+          "height": "850px",
+          "width": "675px",
         }}
         loop={true}
         navigation={true}
@@ -48,7 +53,7 @@ const SwiperProductPage = () => {
         className="mySwiperProduct2"
       >
         <SwiperSlide>
-          <img src={heroProduct} />
+          <img src={valueProduct.imgUrl} />
         </SwiperSlide>
         <SwiperSlide>
           <img src={smallImg} />

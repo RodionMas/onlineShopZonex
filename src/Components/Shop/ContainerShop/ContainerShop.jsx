@@ -24,11 +24,27 @@ const ContainerShop = ({
   onFilterProductColor,
   offFilterProductColor,
   onFilterProductCategory,
+  offFilterProductCategory,
+  counterSize,
+  setCounterSize,
+  onFilterProductSize,
+  offFilterProductSize,
+  counterPrice,
+  setCounterPrice,
+  onFilterProductPrice,
+  offFilterProductPrice,
+  counterBrand,
+  setCounterBrand,
+  onFilterProductBrand,
+  offFilterProductBrand,
+  counterDiscount,
+  setCounterDiscount,
+  onFilterProductDiscount,
+  offFilterProductDiscount,
 }) => {
   return (
     <div className={style.wrapper}>
       <FilteredShop
-        onFilterProductCategory={onFilterProductCategory}
         setStub={setStub}
         allFilter={allFilter}
         setAllFilter={setAllFilter}
@@ -45,6 +61,24 @@ const ContainerShop = ({
         uniqeArr={uniqeArr}
         onFilterProductColor={onFilterProductColor}
         offFilterProductColor={offFilterProductColor}
+        onFilterProductCategory={onFilterProductCategory}
+        offFilterProductCategory={offFilterProductCategory}
+        counterSize={counterSize}
+        setCounterSize={setCounterSize}
+        onFilterProductSize={onFilterProductSize}
+        offFilterProductSize={offFilterProductSize}
+        counterPrice={counterPrice}
+        setCounterPrice={setCounterPrice}
+        onFilterProductPrice={onFilterProductPrice}
+        offFilterProductPrice={offFilterProductPrice}
+        counterBrand={counterBrand}
+        setCounterBrand={setCounterBrand}
+        onFilterProductBrand={onFilterProductBrand}
+        offFilterProductBrand={offFilterProductBrand}
+        counterDiscount={counterDiscount}
+        setCounterDiscount={setCounterDiscount}
+        onFilterProductDiscount={onFilterProductDiscount}
+        offFilterProductDiscount={offFilterProductDiscount}
       />
       <ProductShop
         allFilter={allFilter}
@@ -63,6 +97,11 @@ const ContainerShop = ({
         counterColor={counterColor}
         setCounterColor={setCounterColor}
         uniqeArr={uniqeArr}
+        counterSize={counterSize}
+        setCounterSize={setCounterSize}
+        onFilterProductCategory={onFilterProductCategory}
+        offFilterProductCategory={offFilterProductCategory}
+        offFilterProductColor={offFilterProductColor}
       />
     </div>
   );

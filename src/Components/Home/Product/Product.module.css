@@ -1,22 +1,36 @@
-
-
-.image{
-    width: 340px;
-    height: 430px;
+.image {
+  width: 340px;
+  height: 430px;
 }
-.wrapper span{
-    line-height: 25px;
+.wrapper span {
+  line-height: 25px;
 }
-.all{
-    color: #111111;
-    font-weight: 700;
+.all {
+  color: #111111;
+  font-weight: 700;
 }
-.name{
-    color: #454545;
-    font-size: 16px;
-    font-weight: 300;
+.name {
+  color: #454545;
+  font-size: 16px;
+  font-weight: 300;
 }
-.price{
-    font-size: 16px;
-    font-weight: 700;
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+.priceBox {
+  display: flex;
+}
+.newPrice {
+  color: #959595;
+  font-size: 16px;
+  position: relative;
+}
+.lineNewPrice {
+    top: -4px;
+    width: 38px;
+    position: absolute;
+    color: #959595;
+    left: 8px;
 }

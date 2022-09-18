@@ -12,6 +12,7 @@ const CategoriesShop = ({
   productOnShopPageFilter,
   setProductOnShopPageFilter,
   onFilterProductCategory,
+  offFilterProductCategory,
 }) => {
   
   const [selectedCategory, setSelectedCategory] = React.useState([]);
@@ -61,6 +62,7 @@ const CategoriesShop = ({
                         e.target.value,
                       ]);
                     } else if (!e.target.checked) {
+                      offFilterProductCategory(category.category)
                       setStub(true);
                       category.checked = e.target.checked;
                       setCounterCategory(counterCategory - 1);

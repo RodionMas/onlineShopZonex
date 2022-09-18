@@ -14,7 +14,7 @@
   .hide{
       display: none;
   }
-  .categoriesTextBox {
+  .discountTextBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +31,7 @@
     width: 10px;
     height: 2px;
   }
-  .categoriesCheks {
+  .discountCheks {
     margin-top: 40px;
     margin-bottom: 40px;
     display: grid;

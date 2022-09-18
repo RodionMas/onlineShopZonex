@@ -1,0 +1,32 @@
+.wrapper{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.sku{
+    font-size: 11px;
+    font-weight: 700;
+    color: #959595;
+}
+.skuName{
+    font-size: 11px;
+    font-weight: 700;
+}
+.category{
+    font-size: 11px;
+    font-weight: 700;
+    color: #959595;
+}
+.categoryName{
+    font-size: 11px;
+    font-weight: 700;
+}
+.tags{
+    font-size: 11px;
+    font-weight: 700;
+    color: #959595;
+}
+.tagsName{
+    font-size: 11px;
+    font-weight: 700;
+}

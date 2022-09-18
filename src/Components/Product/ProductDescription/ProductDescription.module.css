@@ -1,0 +1,20 @@
+.wrapper{
+    display: flex;
+    font-family: "Nunito", sans-serif;
+}
+.wrapperProduct {
+  margin-top: 100px;
+  width: 226px;
+  height: 205px;
+  padding: 30px 0;
+  overflow-y: scroll;
+}
+.wrapperProduct::-webkit-scrollbar-thumb{
+    background-color: #151515;
+    border-radius: 15px;
+}
+.wrapperProduct::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 15px;
+    background-color: #cccccc;
+}

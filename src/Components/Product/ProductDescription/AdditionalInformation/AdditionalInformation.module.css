@@ -1,0 +1,19 @@
+.wrapper{
+    margin-bottom: 48px;
+}
+.dim{
+    font-size: 18px;
+    font-weight: 700;
+    color: #858585;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.information{
+    font-size: 18px;
+    font-weight: 700;
+    color: #151515;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}

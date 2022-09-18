@@ -1,9 +1,17 @@
 import React from "react";
 import style from "./PriceShop.module.css";
 import close from "../../../../../Assets/img/close.png";
-const PriceShop = ({ priceFilter }) => {
+const PriceShop = ({
+  onFilterProductPrice,
+  offFilterProductPrice,
+  counterPrice,
+  priceFilter,
+  setNewSelectedFilter,
+  newSelectedFilter,
+  setStub,
+  setCounterPrice,
+}) => {
   const [hideContent, setHideContent] = React.useState(true);
-  const [counterPrice, setCounterPrice] = React.useState(0);
   return (
     <div className={style.wrapper}>
       {!hideContent && (
@@ -19,7 +27,7 @@ const PriceShop = ({ priceFilter }) => {
           </button>
         </div>
       )}
-      <div className={style.categories}>
+      <div className={style.price}>
         <hr />
         <div
           onClick={() => {
@@ -27,31 +35,49 @@ const PriceShop = ({ priceFilter }) => {
           }}
           className={style.priceTextBox}
         >
-          <h2 className={style.categoriesText}>
+          <h2 className={style.priceText}>
             PRICE <span className={style.quantity}>{counterPrice}</span>
           </h2>
           <hr className={style.smallLine} />
         </div>
         {!hideContent && (
-          <div className={style.priceCheks}>
-            {priceFilter.map((category, index) => (
+          <form className={style.priceCheks}>
+            {priceFilter.map((price, index) => (
               <label key={index} htmlFor={"priceId" + index}>
                 <input
+                  checked={price.checked}
                   onChange={(e) => {
                     if (e.target.checked) {
+                      onFilterProductPrice(price.price[0], price.price[2]);
+                      
+                      setStub(false);
+                      price.checked = e.target.checked;
                       setCounterPrice(counterPrice + 1);
+                      setNewSelectedFilter([
+                        ...newSelectedFilter,
+                        e.target.value,
+                      ]);
                     } else if (!e.target.checked) {
+                      offFilterProductPrice(price.price[0], price.price[2]);
+                      setStub(true);
+                      price.checked = e.target.checked;
                       setCounterPrice(counterPrice - 1);
+                      setNewSelectedFilter([
+                        ...newSelectedFilter.filter(
+                          (item) => item != e.target.value
+                        ),
+                      ]);
                     }
                   }}
                   type="checkbox"
                   id={"priceId" + index}
-                  value={category}
+                  value={price.price}
                 />
-                <span>{category}</span>
+
+                <span>{price.price}</span>
               </label>
             ))}
-          </div>
+          </form>
         )}
         <hr />
       </div>

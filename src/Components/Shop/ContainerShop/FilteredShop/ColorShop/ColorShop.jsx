@@ -9,13 +9,10 @@ const ColorShop = ({
   setStub,
   counterColor,
   setCounterColor,
-  productOnShopPageFilter,
-  setProductOnShopPageFilter,
-  uniqeArr,
   onFilterProductColor,
   offFilterProductColor,
 }) => {
-  const [hideContent, setHideContent] = React.useState(false);
+  const [hideContent, setHideContent] = React.useState(true);
 
   return (
     <div className={style.wrapper}>

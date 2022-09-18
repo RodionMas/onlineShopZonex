@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './Nav.module.css'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const Nav = ({setActiveLinkNav, activeLinkNav}) => {
-// className={style.active}
+
     return (
         <div className={style.wrapper}>
             <nav className={style.nav}>

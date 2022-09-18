@@ -1,0 +1,13 @@
+.list{
+    display: flex;
+    font-family: 'Nunito', sans-serif;
+
+}
+.item + .item{
+    margin-left: 45px;
+}
+.text{
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+}

@@ -9,12 +9,9 @@ import { Link } from "react-router-dom";
 const ProductOnShopPage = ({
   productOnShopPageFilter,
   activeNumber,
-  // allFilter,
-  // setProductOnShopPageFilter,
-  // setAllFilter,
-  // newProductOnShopPageFilter,
   uniqeArr,
 }) => {
+  const [shopLink, setShopLink] = React.useState("/home/shop/");
   return (
     <div
       className={
@@ -29,8 +26,8 @@ const ProductOnShopPage = ({
     >
       {uniqeArr.length === 0
         ? productOnShopPageFilter.map((product, i) => (
-              <div className="" key={i}>
-                <Link to='/home/shop/product'>
+            <div className="" key={i}>
+              <Link to={`${shopLink + product.id}`}>
                 <img
                   className={style.imageProduct}
                   src={product.imgUrl}
@@ -59,15 +56,25 @@ const ProductOnShopPage = ({
                   )}
                   <br />
                   <span className={style.name}>{product.name}</span>
-                  <br />
-                  <span className={style.price}>{product.price}</span>
+                  <div className={style.priceBox}>
+                    <span className={style.price}>
+                      ${product.price.toFixed(2)}
+                      {"\u00A0"}
+                    </span>
+                    {product.newPrice && (
+                      <span className={style.newPrice}>
+                        - ${product.newPrice}
+                        <hr className={style.lineNewPrice} />
+                      </span>
+                    )}
+                  </div>
                 </div>
-                </Link>
-              </div>
+              </Link>
+            </div>
           ))
         : uniqeArr.map((product, i) => (
-            <Link to={'home/shop/product'}> 
-              <div className="" key={i}>
+            <div className="" key={i}>
+              <Link to={"/home/shop/product"}>
                 <img
                   className={style.imageProduct}
                   src={product.imgUrl}
@@ -96,11 +103,21 @@ const ProductOnShopPage = ({
                   )}
                   <br />
                   <span className={style.name}>{product.name}</span>
-                  <br />
-                  <span className={style.price}>{product.price}</span>
+                  <div className={style.priceBox}>
+                    <span className={style.price}>
+                      ${product.price.toFixed(2)}
+                      {"\u00A0"}
+                    </span>
+                    {product.newPrice && (
+                      <span className={style.newPrice}>
+                        - ${product.newPrice}
+                        <hr className={style.lineNewPrice} />
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
     </div>
   );

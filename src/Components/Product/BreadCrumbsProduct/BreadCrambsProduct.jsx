@@ -2,16 +2,17 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import style from './BreadCrambsProduct.module.css'
 
-const BreadCrambsProduct = () => {
+const BreadCrambsProduct = ({valueProduct}) => {
     const breadCrumbsLinkProduct = useParams();
     const [counterBreadProduct, setCounterBreadProduct] = React.useState(0);
-  
+
     React.useEffect(() => {
       for (let value in breadCrumbsLinkProduct) {
         let countValue = [];
         setCounterBreadProduct([...countValue, value].length);
       }
     }, []);
+    
     return (
         <div className={style.wrapper}>
              <Link to={`/`} className={style.link}>
@@ -26,10 +27,9 @@ const BreadCrambsProduct = () => {
         </Link>
         <span className={style.separator}> / </span>
         <span
-          to={`/${breadCrumbsLinkProduct.product}/${breadCrumbsLinkProduct.product}`}
           className={counterBreadProduct === 1 ? style.active : "" + '' + style.link}
         >
-          {breadCrumbsLinkProduct.product.toUpperCase()}
+          {valueProduct.productInfo.name.toUpperCase()}
         </span>
         </div>
     );

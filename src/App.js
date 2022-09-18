@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { db } from "./Assets/db/db";
 import Home from "./Components/Home/Home";
-import ProductPage from './Components/Product/ProductPage'
+import ProductPage from "./Components/Product/ProductPage";
 import WrapperNav from "./Components/Home/WrapperNav/WrapperNav";
 import { Routes, Route } from "react-router-dom";
 import ShopPage from "./Components/Shop/ShopPage/ShopPage";
@@ -26,28 +26,98 @@ function App() {
     React.useState([]);
   const [uniqeArr, setUniqeArr] = React.useState([]);
 
+  //Category
+  const onFilterProductCategory = (filter) => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.categories === filter;
+    });
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  };
+  const offFilterProductCategory = (filter) => {
+    let newFilter = uniqeArr.filter((product) => {
+      return product.categories !== filter;
+    });
+    setNewProductOnShopPageFilter(newFilter);
+    setUniqeArr(newFilter);
+  };
+  //Color
   const onFilterProductColor = (filter) => {
     let newFilter = [...productOnShopPageFilter].filter((product) => {
-      return product.color.includes(filter) ? product : "";
+      return product.color.includes(filter);
     });
+
     newProductOnShopPageFilter.push(...newFilter);
     setUniqeArr([...new Set(newProductOnShopPageFilter)]);
-    
-  };
-  const onFilterProductCategory = (filter) => {
-    //если массив пустой тогда выполняй это если нет тогда не выполняй а придумай условие
-    let newFilter = [...productOnShopPageFilter].filter((product) => {
-      return product.categories === filter ? product : "";
-    });
-    newProductOnShopPageFilter.push(...newFilter);
-    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
-   
   };
   const offFilterProductColor = (filter) => {
     let newFilter = uniqeArr.filter((product) => {
-      return !product.color.includes(filter) ? product : '';
+      return !product.color.includes(filter);
     });
-    setUniqeArr(newFilter)
+    setNewProductOnShopPageFilter(newFilter);
+    setUniqeArr(newFilter);
+  };
+  //Size
+  const onFilterProductSize = (filter) => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.size.includes(filter);
+    });
+
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  };
+  const offFilterProductSize = (filter) => {
+    let newFilter = uniqeArr.filter((product) => {
+      return !product.size.includes(filter);
+    });
+    setNewProductOnShopPageFilter(newFilter);
+    setUniqeArr(newFilter);
+  };
+  //Price
+  const onFilterProductPrice = (priceOne, priceTwo) => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.price >= priceOne && product.price <= priceTwo;
+    });
+
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  };
+  const offFilterProductPrice = (priceOne, priceTwo) => {
+    let newFilter = uniqeArr.filter((product) => {
+      return !(product.price >= priceOne && product.price <= priceTwo);
+    });
+    setNewProductOnShopPageFilter(newFilter);
+    setUniqeArr(newFilter);
+  };
+  //Brand
+  const onFilterProductBrand = (filter) => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.brand === filter;
+    });
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  };
+  const offFilterProductBrand = (filter) => {
+    let newFilter = uniqeArr.filter((product) => {
+      return product.brand !== filter;
+    });
+    setNewProductOnShopPageFilter(newFilter);
+    setUniqeArr(newFilter);
+  };
+  //Discount
+  const onFilterProductDiscount = (filter) => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.discount === filter;
+    });
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  };
+  const offFilterProductDiscount = (filter) => {
+    let newFilter = uniqeArr.filter((product) => {
+      return product.discount !== filter;
+    });
+    setNewProductOnShopPageFilter(newFilter);
+    setUniqeArr(newFilter);
   };
 
   //Для страницы продуктов в магазине--
@@ -76,6 +146,10 @@ function App() {
   //counter filters
   const [counterCategory, setCounterCategory] = React.useState(0);
   const [counterColor, setCounterColor] = React.useState(0);
+  const [counterSize, setCounterSize] = React.useState(0);
+  const [counterPrice, setCounterPrice] = React.useState(0);
+  const [counterBrand, setCounterBrand] = React.useState(0);
+  const [counterDiscount, setCounterDiscount] = React.useState(0);
 
   //counter filters--
 
@@ -118,14 +192,14 @@ function App() {
       { size: "31", checked: false },
     ],
     priceFilter: [
-      { price: "0 - 100", checked: false },
-      { price: "100 - 200", checked: false },
-      { price: "200 - 300", checked: false },
-      { price: "300 - 400", checked: false },
-      { price: "400 - 500", checked: false },
-      { price: "500 - 600", checked: false },
-      { price: "600 - 700", checked: false },
-      { price: "700 - 800", checked: false },
+      { price: [0, " - ", 100], checked: false },
+      { price: [100, " - ", 200], checked: false },
+      { price: [200, " - ", 300], checked: false },
+      { price: [300, " - ", 400], checked: false },
+      { price: [400, " - ", 500], checked: false },
+      { price: [500, " - ", 600], checked: false },
+      { price: [600, " - ", 700], checked: false },
+      { price: [700, " - ", 800], checked: false },
     ],
     brandFilter: [
       { brand: "Vero Moda", checked: false },
@@ -146,7 +220,17 @@ function App() {
       { discount: "Less Than 40% Off", checked: false },
     ],
   });
-  //filter checkbox
+  //filter checkbox--
+
+  //Select Color and Size on ProductPage
+  const [selectAColor, setSelectAColor] = React.useState("SELECT A COLOR");
+  const [selectASize, setSelectASize] = React.useState("SELECT A SIZE");
+  //Select Color and Size on ProductPage--
+
+  //Counter Product Page
+  const [counterProductPage, setCounterProductPage] = React.useState(1);
+  //Counter Product Page--
+
   React.useEffect(() => {
     setTimeout(() => {
       setActiveMarkenig(true);
@@ -169,15 +253,18 @@ function App() {
       />
       <Routes>
         <Route
-          index
+          path="/"
           element={
             <Home
+              setActiveLinkNav={setActiveLinkNav}
               activeMarkenig={activeMarkenig}
               closeMarketing={closeMarketing}
               filterMain={filterMain}
               activeFilter={activeFilter}
               setActiveFilter={setActiveFilter}
               newProductFilter={newProductFilter}
+              setSelectAColor={setSelectAColor}
+              setSelectASize={setSelectASize}
             />
           }
         ></Route>
@@ -185,6 +272,11 @@ function App() {
           path="/:home/:shop/"
           element={
             <ShopPage
+              activeLinkNav={activeLinkNav}
+              setActiveLinkNav={setActiveLinkNav}
+              setSelectAColor={setSelectAColor}
+              setSelectASize={setSelectASize}
+              offFilterProductCategory={offFilterProductCategory}
               offFilterProductColor={offFilterProductColor}
               onFilterProductColor={onFilterProductColor}
               onFilterProductCategory={onFilterProductCategory}
@@ -202,12 +294,40 @@ function App() {
               setCounterColor={setCounterColor}
               product={product}
               uniqeArr={uniqeArr}
+              counterSize={counterSize}
+              setCounterSize={setCounterSize}
+              onFilterProductSize={onFilterProductSize}
+              offFilterProductSize={offFilterProductSize}
+              counterPrice={counterPrice}
+              setCounterPrice={setCounterPrice}
+              onFilterProductPrice={onFilterProductPrice}
+              offFilterProductPrice={offFilterProductPrice}
+              counterBrand={counterBrand}
+              setCounterBrand={setCounterBrand}
+              onFilterProductBrand={onFilterProductBrand}
+              offFilterProductBrand={offFilterProductBrand}
+              counterDiscount={counterDiscount}
+              setCounterDiscount={setCounterDiscount}
+              onFilterProductDiscount={onFilterProductDiscount}
+              offFilterProductDiscount={offFilterProductDiscount}
             />
           }
-        ></Route>
-        <Route path="/:home/:shop/:product" element={<ProductPage />}>
-
-        </Route>
+        />
+        <Route
+          path="/:home/:shop/:id"
+          element={
+            <ProductPage
+              setActiveLinkNav={setActiveLinkNav}
+              selectAColor={selectAColor}
+              productOnShopPageFilter={productOnShopPageFilter}
+              setSelectAColor={setSelectAColor}
+              selectASize={selectASize}
+              setSelectASize={setSelectASize}
+              setCounterProductPage={setCounterProductPage}
+              counterProductPage={counterProductPage}
+            />
+          }
+        />
       </Routes>
     </>
   );

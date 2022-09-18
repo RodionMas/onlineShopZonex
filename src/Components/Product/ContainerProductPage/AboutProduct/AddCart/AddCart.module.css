@@ -1,0 +1,45 @@
+.wrapper{
+    margin-top: 60px;
+    font-family: "Nunito", sans-serif;
+}
+.counter{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 17px;
+    border: 1px solid #cccccc;
+    align-items: center;
+}
+.num{
+    font-size: 15px;
+    font-weight: 700;
+}
+.counter button{
+    color: #858585;
+    font-size: 25px;
+    font-weight: 700;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.addCart button{
+    width: 100%;
+    font-size: 15px;
+    padding: 15px 0;
+    border: none;
+    cursor: pointer;
+    background: #151515;
+    color: #fff;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.wishlist button{
+    width: 100%;
+    font-size: 15px;
+    padding: 15px 0;
+    border: none;
+    cursor: pointer;
+    background: #f2f2f2;
+    color: #151515;
+    font-weight: 700;
+}

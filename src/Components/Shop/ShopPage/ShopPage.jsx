@@ -4,6 +4,7 @@ import ContainerShop from "../ContainerShop/ContainerShop";
 import ShopSwiper from "../ShopSwiper/ShopSwiper";
 import style from "./ShopPage.module.css";
 const ShopPage = ({
+  activeLinkNav,
   setNewSelectedFilter,
   newSelectedFilter,
   setProductOnShopPageFilter,
@@ -21,6 +22,26 @@ const ShopPage = ({
   onFilterProductColor,
   offFilterProductColor,
   onFilterProductCategory,
+  offFilterProductCategory,
+  counterSize,
+  setCounterSize,
+  onFilterProductSize,
+  offFilterProductSize,
+  counterPrice,
+  setCounterPrice,
+  onFilterProductPrice,
+  offFilterProductPrice,
+  counterBrand,
+  setCounterBrand,
+  onFilterProductBrand,
+  offFilterProductBrand,
+  counterDiscount,
+  setCounterDiscount,
+  onFilterProductDiscount,
+  offFilterProductDiscount,
+  setSelectAColor,
+  setSelectASize,
+  setActiveLinkNav,
 }) => {
   //Column number component
   const columnNumber = [3, 4, 5];
@@ -30,11 +51,17 @@ const ShopPage = ({
   };
   //Column number component--
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    setSelectAColor("SELECT A COLOR");
+    setSelectASize("SELECT A SIZE");
+  }, []);
   return (
     <div className={style.wrapper}>
       <ShopSwiper />
-      <BreadCrumbs />
+      <BreadCrumbs activeLinkNav={activeLinkNav} setActiveLinkNav={setActiveLinkNav} />
       <ContainerShop
+        offFilterProductCategory={offFilterProductCategory}
         offFilterProductColor={offFilterProductColor}
         uniqeArr={uniqeArr}
         product={product}
@@ -55,6 +82,22 @@ const ShopPage = ({
         setCounterColor={setCounterColor}
         onFilterProductColor={onFilterProductColor}
         onFilterProductCategory={onFilterProductCategory}
+        counterSize={counterSize}
+        setCounterSize={setCounterSize}
+        onFilterProductSize={onFilterProductSize}
+        offFilterProductSize={offFilterProductSize}
+        counterPrice={counterPrice}
+        setCounterPrice={setCounterPrice}
+        onFilterProductPrice={onFilterProductPrice}
+        offFilterProductPrice={offFilterProductPrice}
+        counterBrand={counterBrand}
+        setCounterBrand={setCounterBrand}
+        onFilterProductBrand={onFilterProductBrand}
+        offFilterProductBrand={offFilterProductBrand}
+        counterDiscount={counterDiscount}
+        setCounterDiscount={setCounterDiscount}
+        onFilterProductDiscount={onFilterProductDiscount}
+        offFilterProductDiscount={offFilterProductDiscount}
       />
     </div>
   );

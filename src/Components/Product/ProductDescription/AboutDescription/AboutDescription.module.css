@@ -1,0 +1,31 @@
+.wrapper{
+    width: 874px;
+    margin-top: 100px;
+    margin-left: 130px;
+}
+.textAnother{
+    margin-top: 30px;
+}
+.text{
+    line-height: 24px;
+    font-weight: 500;
+}
+.hideText{
+    display: none;
+}
+.reviewsBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.name{
+    font-weight: 700;
+}
+.raiting{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.raitingImg{
+    margin-left: 5px;
+}

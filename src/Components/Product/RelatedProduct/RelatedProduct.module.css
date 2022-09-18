@@ -1,0 +1,35 @@
+.wrapper {
+  margin-top: 100px;
+  font-family: "Nunito", sans-serif;
+  line-height: 25px;
+}
+.related {
+  font-size: 24px;
+  font-weight: 500;
+}
+.swiperRelated {
+  margin-top: 45px;
+}
+.imageProduct {
+  width: 309px;
+  height: 390px;
+}
+.wrapper4,
+.wrapper5,
+.wrapper3 span {
+  line-height: 25px;
+}
+.all {
+  color: #111111;
+  font-weight: 700;
+}
+.name {
+  color: #454545;
+  font-size: 16px;
+  font-weight: 300;
+}
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}

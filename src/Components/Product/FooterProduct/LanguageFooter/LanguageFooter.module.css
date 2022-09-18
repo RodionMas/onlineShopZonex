@@ -1,0 +1,28 @@
+.wrapper {
+    font-family: "Nunito", sans-serif;
+  }
+  .text {
+    color: #858585;
+    font-style: 13px;
+    font-weight: 400;
+  }
+  .select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    position: relative;
+    outline: none;
+    padding: 5px;
+    padding-right: 40px;
+    padding-top: 6px;
+    background-image: url("./../../../../Assets/img/down.png");
+    background-repeat: no-repeat;
+    background-position: 65px 10px;
+    cursor: pointer;
+  }
+  label {
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  

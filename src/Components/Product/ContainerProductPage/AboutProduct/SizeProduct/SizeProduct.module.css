@@ -1,0 +1,61 @@
+.wrapper {
+  font-family: "Nunito", sans-serif;
+  margin-top: 30px;
+}
+.wrapperSizes {
+  display: flex;
+  justify-content: space-between;
+}
+.sizeBox {
+  display: flex;
+}
+.sizeText {
+  font-size: 14px;
+  font-weight: bold;
+  color: #959595;
+}
+.selectedSize {
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  left: 8px;
+}
+.sizesCharts {
+  font-size: 14px;
+  font-weight: bold;
+  color: #959595;
+}
+.sizesBox{
+    margin-top: 15px;
+}
+.list{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.item + .item{
+  margin-left: 5px;
+}
+.btnSizes{
+    padding: 11px 13px;
+    background: transparent;
+    color: #858585;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+.btnSizes:hover{
+    border: 1px solid #959595;
+}
+.close{
+  margin-top: 15px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.close img{
+  margin-right: 5px;
+}
+.clear{
+  font-size: 13px;
+  font-weight: 400;
+  color: #d24242;
+}

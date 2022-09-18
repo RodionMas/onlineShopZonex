@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  font-family: "Nunito", sans-serif;
+  margin-top: 24px;
+}
+.share {
+  font-size: 14px;
+  font-weight: bold;
+  color: #959595;
+}
+.social + .social{
+    margin-left: 28px;
+}
+.shareBox{
+    margin-right: 15px;
+}

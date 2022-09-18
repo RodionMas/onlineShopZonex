@@ -1,6 +1,6 @@
 .wrapper {
   height: 563px;
-  width: 721px;
+  width: 756px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
