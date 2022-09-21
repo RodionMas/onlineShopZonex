@@ -26,32 +26,32 @@ const ProductOnShopPage = ({
     >
       {uniqeArr.length === 0
         ? productOnShopPageFilter.map((product, i) => (
-            <div className="" key={i}>
+            <div key={i}>
               <Link to={`${shopLink + product.id}`}>
                 <img
                   className={style.imageProduct}
                   src={product.imgUrl}
-                  alt=""
+                  alt="product"
                 />
                 <div className={style.textBox}>
                   {product.newShop && (
                     <span className={style.all}>
-                      <img src={n} alt="" /> NEW
+                      <img src={n} alt="NEW" /> NEW
                     </span>
                   )}
                   {product.hot && (
                     <span className={style.all}>
-                      <img src={hotest} alt="" /> HOT
+                      <img src={hotest} alt="HOT" /> HOT
                     </span>
                   )}
                   {product.top && (
                     <span className={style.all}>
-                      <img src={topShop} alt="" /> TOP
+                      <img src={topShop} alt="TOP" /> TOP
                     </span>
                   )}
                   {product.bestSellers && (
                     <span className={style.all}>
-                      <img src={best} alt="" /> BEST SELLER
+                      <img src={best} alt="BESTSELLER" /> BEST SELLER
                     </span>
                   )}
                   <br />
@@ -74,7 +74,7 @@ const ProductOnShopPage = ({
           ))
         : uniqeArr.map((product, i) => (
             <div className="" key={i}>
-              <Link to={"/home/shop/product"}>
+              <Link to={`${shopLink + product.id}`}>
                 <img
                   className={style.imageProduct}
                   src={product.imgUrl}

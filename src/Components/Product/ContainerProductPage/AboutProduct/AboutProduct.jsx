@@ -20,6 +20,9 @@ const AboutProduct = ({
   counterProductPage,
   productBag,
   setProductBag,
+  setStub,
+  stub,
+  wishlist,
 }) => {
   return (
     <div className={style.wrapper}>
@@ -38,11 +41,16 @@ const AboutProduct = ({
         setSelectASize={setSelectASize}
       />
       <AddCart
+        wishlist={wishlist}
+        stub={stub}
+        selectAColor={selectAColor}
+        selectASize={selectASize}
         valueProduct={valueProduct}
         setCounterProductPage={setCounterProductPage}
         counterProductPage={counterProductPage}
         productBag={productBag}
         setProductBag={setProductBag}
+        setStub={setStub}
       />
       <TagsProduct valueProduct={valueProduct} />
       <SocialProduct />

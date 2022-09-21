@@ -13,21 +13,16 @@ import n from "../../../Assets/img/new.png";
 import hotest from "../../../Assets/img/hot.png";
 import topShop from "../../../Assets/img/top.png";
 import best from "../../../Assets/img/best.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import style from "./RelatedProduct.module.css";
 
-const RelatedProduct = ({
-  valueProduct,
-  setValueProduct,
-  productOnShopPageFilter,
-}) => {
+const RelatedProduct = ({ valueProduct, productOnShopPageFilter, setValueProduct }) => {
   const [pathRelateProduct, setPathRelateProduct] =
     React.useState("/home/shop/");
-  const pathname = useLocation();
-
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, []);
+  
   return (
     <div className={style.wrapper}>
       <h1 className={style.related}>Related Product</h1>
@@ -48,7 +43,12 @@ const RelatedProduct = ({
           {productOnShopPageFilter.map((product, i) => {
             return (
               <SwiperSlide key={product.id}>
-                <Link to={`${pathRelateProduct + product.id}`}>
+                <Link
+                  onClick={() => {
+                    setValueProduct(valueProduct.productInfo = [...product]);
+                  }}
+                  to={`${pathRelateProduct + product.id}`}
+                >
                   <img
                     className={style.imageProduct}
                     src={product.imgUrl}

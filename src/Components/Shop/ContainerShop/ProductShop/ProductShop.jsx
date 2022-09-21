@@ -2,6 +2,8 @@ import React from "react";
 import ColumnNumbers from "./ColumnNumbers/ColumnNumbers";
 import ProductOnShopPage from "./ProductOnShopPage/ProductOnShopPage";
 import SelectedFilters from "./SelectedFilters/SelectedFilters";
+import SortProduct from "./SortProduct/SortProduct";
+import style from "./ProductShop.module.css";
 
 const ProductShop = ({
   columnNumber,
@@ -27,18 +29,26 @@ const ProductShop = ({
 }) => {
   return (
     <div>
-      <ColumnNumbers
-        activeNumberFn={activeNumberFn}
-        columnNumber={columnNumber}
-        activeNumber={activeNumber}
-      />
+      <div className={style.box}>
+        <ColumnNumbers
+          activeNumberFn={activeNumberFn}
+          columnNumber={columnNumber}
+          activeNumber={activeNumber}
+        />
+        <SortProduct
+          setStub={setStub}
+          stub={stub}
+          productOnShopPageFilter={productOnShopPageFilter}
+          uniqeArr={uniqeArr}
+        />
+      </div>
       <SelectedFilters
+        setStub={setStub}
         stub={stub}
         setNewSelectedFilter={setNewSelectedFilter}
         newSelectedFilter={newSelectedFilter}
         allFilter={allFilter}
         setAllFilter={setAllFilter}
-        setStub={setStub}
         counterCategory={counterCategory}
         setCounterCategory={setCounterCategory}
         counterColor={counterColor}
@@ -48,6 +58,7 @@ const ProductShop = ({
         offFilterProductCategory={offFilterProductCategory}
         offFilterProductColor={offFilterProductColor}
       />
+
       <ProductOnShopPage
         uniqeArr={uniqeArr}
         setProductOnShopPageFilter={setProductOnShopPageFilter}

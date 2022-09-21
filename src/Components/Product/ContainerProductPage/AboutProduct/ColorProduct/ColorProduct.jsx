@@ -4,7 +4,7 @@ import closeRed from "../../../../../Assets/img/redClose.png";
 const ColorProduct = ({ valueProduct, selectAColor, setSelectAColor }) => {
   let selectColor = valueProduct.color.map((item, i) => {
     return (
-      <li key={i} className={style.item}>
+      <li key={i} className={item !== "summer" ? style.item : style.hideBtn}>
         <button
           onClick={() => setSelectAColor(item)}
           className={
@@ -24,6 +24,8 @@ const ColorProduct = ({ valueProduct, selectAColor, setSelectAColor }) => {
               ? style.purple
               : item === "grey"
               ? style.grey
+              : item === "blue"
+              ? style.blue
               : ""
           }
         ></button>

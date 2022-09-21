@@ -1,0 +1,19 @@
+.sel {
+    -webkit-appearance: none;
+    -webkit-border-radius: 2px;
+    -webkit-user-select: none;
+    border: none;
+    position: relative;
+    outline: none;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 5px;
+    background-image: url(../../../../../Assets//img/down.png);
+    background-position: right 4px;
+    width: 85px;
+}
+
+.sortText {
+  font-size: 15px;
+  font-weight: 700;
+}

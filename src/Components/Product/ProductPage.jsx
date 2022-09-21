@@ -17,19 +17,28 @@ const ProductPage = ({
   setActiveLinkNav,
   productBag,
   setProductBag,
+  setStub,
+  stub,
+  valueProduct,
+  setValueProduct,
+  wishlist,
 }) => {
   const [paramsProduct, setParamsProduct] = React.useState(useParams());
-  const [valueProduct, setValueProduct] = React.useState({});
+
   productOnShopPageFilter.filter((product, i) => {
     return Number(paramsProduct.id) === product.id
       ? (valueProduct.productInfo = product)
       : "";
   });
-  React.useEffect(() => {setActiveLinkNav(1)}, [valueProduct, paramsProduct]);
+
+  React.useEffect(() => {
+    setActiveLinkNav(1);
+  }, [valueProduct, paramsProduct]);
   return (
     <div className={style.wrapper}>
       <BreadCrambsProduct valueProduct={valueProduct} />
       <ContainerProductPage
+        stub={stub}
         valueProduct={valueProduct}
         selectAColor={selectAColor}
         setSelectAColor={setSelectAColor}
@@ -40,6 +49,8 @@ const ProductPage = ({
         counterProductPage={counterProductPage}
         productBag={productBag}
         setProductBag={setProductBag}
+        setStub={setStub}
+        wishlist={wishlist}
       />
       <ProductDescription valueProduct={valueProduct.productInfo} />
       <RelatedProduct

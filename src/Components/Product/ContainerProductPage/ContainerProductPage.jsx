@@ -12,11 +12,16 @@ const ContainerProductPage = ({
   counterProductPage,
   productBag,
   setProductBag,
+  setStub,
+  stub,
+  wishlist,
 }) => {
   return (
     <div className={style.wrapper}>
       <SwiperProductPage valueProduct={valueProduct.productInfo} />
       <AboutProduct
+        stub={stub}
+        setStub={setStub}
         selectASize={selectASize}
         setSelectASize={setSelectASize}
         valueProduct={valueProduct.productInfo}
@@ -26,6 +31,7 @@ const ContainerProductPage = ({
         counterProductPage={counterProductPage}
         productBag={productBag}
         setProductBag={setProductBag}
+        wishlist={wishlist}
       />
     </div>
   );

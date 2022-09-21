@@ -1,31 +1,82 @@
-.wrapperHidden{
-    height: 0vh;
-    width: 700px;
-    position: absolute;
-    z-index: 10;
-    top: -504px;
-    right: 0;
-    font-family: 'Nunito', sans-serif;
-    background-color: #fff;
-    opacity: 0.9;
-    transition: all 1s;
+.wrapperHidden {
+  height: 0vh;
+  width: 700px;
+  position: absolute;
+  z-index: 10;
+  top: -1504px;
+  right: 0;
+  font-family: "Nunito", sans-serif;
+  background-color: #fff;
+  opacity: 0.5;
+  transform: rotate(42deg);
+  transition: all 1s;
 }
-.wrapper{
-    height: 100vh;
-    width: 700px;
-    position: absolute;
-    z-index: 10;
-    top: 50px;
-    right: 0;
-    font-family: 'Nunito', sans-serif;
-    background-color: #fff;
-    opacity: 0.9;
-    transition: all 1s;
+.wrapper {
+  height: 100vh;
+  width: 700px;
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  right: 0;
+  font-family: "Nunito", sans-serif;
+  background-color: #fff;
+  opacity: 1;
+  transition: all 1s;
 }
-.cart{
-    text-align: center;
-    margin-top: 20px;
+.cart {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  overflow-y: auto;
+  height: 50vh;
+  width: 400px;
 }
-.wishlist{
-    text-align: center;
+.wishlist {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  overflow-y: auto;
+  height: 30vh;
+  width: 400px;
+}
+
+.bagBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.bagBox img {
+  width: 100px;
+  height: 130px;
+}
+.nameBox {
+  margin-left: 10px;
+  text-align: left;
+  width: 300px;
+}
+.bagBox span{
+  line-height: 22px;
+}
+.name, .size, .color, .quantity, .price{
+  font-weight: 700;
+}
+.cart::-webkit-scrollbar-thumb{
+  background-color: #151515;
+  border-radius: 15px;
+}
+.cart::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 15px;
+  background-color: #cccccc;
+}
+
+.wishlist::-webkit-scrollbar-thumb{
+  background-color: #151515;
+  border-radius: 15px;
+}
+.wishlist::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 15px;
+  background-color: #cccccc;
 }

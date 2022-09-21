@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import { db } from "./Assets/db/db";
+import { useParams } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import ProductPage from "./Components/Product/ProductPage";
 import WrapperNav from "./Components/Home/WrapperNav/WrapperNav";
@@ -233,20 +234,24 @@ function App() {
   //Counter Product Page--
 
   //Bag visible
-  const [bagVisible, setBagVisible] = React.useState(false)
+  const [bagVisible, setBagVisible] = React.useState(false);
   const bagVisibleFn = () => {
-    if(bagVisible === true){
-      setBagVisible(false)
+    if (bagVisible === true) {
+      setBagVisible(false);
     } else {
-      setBagVisible(true)
+      setBagVisible(true);
     }
-  }
+  };
   //Bag visible--
 
   //Product Bag
-  const [productBag, setProductBag] = React.useState([])
+  const [productBag, setProductBag] = React.useState([]);
+  const [wishlist, setWishlist] = React.useState([]);
   //Product Bag--
 
+  //Value Product for useParams
+  const [valueProduct, setValueProduct] = React.useState({});
+  //Value Product for useParams--
   React.useEffect(() => {
     setTimeout(() => {
       setActiveMarkenig(true);
@@ -257,6 +262,7 @@ function App() {
     productOnShopPageFilter,
     newProductOnShopPageFilter,
     uniqeArr,
+    productBag,
   ]);
   const closeMarketing = () => {
     setActiveMarkenig(false);
@@ -268,8 +274,18 @@ function App() {
         setActiveLinkNav={setActiveLinkNav}
         bagVisibleFn={bagVisibleFn}
         bagVisible={bagVisible}
+        productBag={productBag}
       />
-      <Bag bagVisible={bagVisible} />
+      <Bag
+        setValueProduct={setValueProduct}
+        productBag={productBag}
+        bagVisible={bagVisible}
+        selectAColor={selectAColor}
+        selectASize={selectASize}
+        counterProductPage={counterProductPage}
+        valueProduct={valueProduct}
+        wishlist={wishlist}
+      />
       <Routes>
         <Route
           path="/"
@@ -336,16 +352,21 @@ function App() {
           path="/:home/:shop/:id"
           element={
             <ProductPage
+              wishlist={wishlist}
+              setValueProduct={setValueProduct}
+              valueProduct={valueProduct}
               setActiveLinkNav={setActiveLinkNav}
               selectAColor={selectAColor}
+              selectASize={selectASize}
               productOnShopPageFilter={productOnShopPageFilter}
               setSelectAColor={setSelectAColor}
-              selectASize={selectASize}
               setSelectASize={setSelectASize}
               setCounterProductPage={setCounterProductPage}
               counterProductPage={counterProductPage}
               productBag={productBag}
               setProductBag={setProductBag}
+              setStub={setStub}
+              stub={stub}
             />
           }
         />

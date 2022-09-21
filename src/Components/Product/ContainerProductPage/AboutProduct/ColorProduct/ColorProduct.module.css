@@ -68,6 +68,9 @@
 .grey {
   background: grey;
 }
+.blue {
+  background: blue;
+}
 .hidePart{
   opacity: 0.3;
 }
@@ -84,4 +87,8 @@
   font-size: 13px;
   font-weight: 400;
   color: #d24242;
+}
+.hidebtn{
+  display: none;
+  border: none;
 }
