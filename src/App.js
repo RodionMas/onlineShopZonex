@@ -28,6 +28,34 @@ function App() {
     React.useState([]);
   const [uniqeArr, setUniqeArr] = React.useState([]);
 
+  //for banners Home > Shop
+  const womenFilter = () => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.sex === "women";
+    });
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  }
+
+  const summerFilter = () => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.color.includes("summer");
+    });
+
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  }
+
+  const accessoriesFilter = () => {
+    let newFilter = [...productOnShopPageFilter].filter((product) => {
+      return product.discount === "Less Than 40% Off" && product.categories === "Accessories";
+    });
+    newProductOnShopPageFilter.push(...newFilter);
+    setUniqeArr([...new Set(newProductOnShopPageFilter)]);
+  }
+  //for banners Home > Shop--
+
+
   //Category
   const onFilterProductCategory = (filter) => {
     let newFilter = [...productOnShopPageFilter].filter((product) => {
@@ -275,6 +303,9 @@ function App() {
         bagVisibleFn={bagVisibleFn}
         bagVisible={bagVisible}
         productBag={productBag}
+        product={product}
+        setProduct={setProduct}
+        valueProduct={valueProduct}
       />
       <Bag
         setValueProduct={setValueProduct}
@@ -291,6 +322,9 @@ function App() {
           path="/"
           element={
             <Home
+              womenFilter={womenFilter}
+              summerFilter={summerFilter}
+              accessoriesFilter={accessoriesFilter}
               setActiveLinkNav={setActiveLinkNav}
               activeMarkenig={activeMarkenig}
               closeMarketing={closeMarketing}

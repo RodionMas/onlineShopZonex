@@ -4,7 +4,7 @@ import logo from "../../../../Assets/img/zonex.png";
 import style from './Logo.module.css'
 const Logo = () => {
     return (
-        <div>
+        <div className={style.wrapper}>
             <img className={style.logo} src={logo} alt="logo" />
         </div>
     );

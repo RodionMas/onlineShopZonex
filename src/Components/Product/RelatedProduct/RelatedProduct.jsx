@@ -79,6 +79,12 @@ const RelatedProduct = ({ valueProduct, productOnShopPageFilter, setValueProduct
                     <span className={style.name}>{product.name}</span>
                     <br />
                     <span className={style.price}>${product.price}</span>
+                    {product.newPrice && (
+                      <span className={style.newPrice}>
+                        - ${product.newPrice}
+                        <hr className={style.lineNewPrice} />
+                      </span>
+                    )}
                   </div>
                 </Link>
               </SwiperSlide>

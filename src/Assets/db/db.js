@@ -11,6 +11,7 @@ import i10 from "../../Assets/img/imgFilter/10.png";
 export const db = [
   {
     imgUrl: `${i1}`,
+    popular: 4,
     newShop: true,
     name: "Eye Mesh Boat Shoes",
     price: 220.0,
@@ -44,6 +45,7 @@ export const db = [
   },
   {
     imgUrl: `${i2}`,
+    popular: 5,
     newShop: false,
     name: "Azure Tote",
     price: 290.0,
@@ -79,6 +81,7 @@ export const db = [
   },
   {
     imgUrl: `${i3}`,
+    popular: 3,
     newShop: true,
     name: "Blue Raincoat",
     price: 200.0,
@@ -109,6 +112,7 @@ export const db = [
   },
   {
     imgUrl: `${i4}`,
+    popular: 4,
     newShop: false,
     name: "Backpack with contrasting buckle colorfull",
     price: 125.0,
@@ -148,6 +152,7 @@ export const db = [
   },
   {
     imgUrl: `${i5}`,
+    popular: 3,
     newShop: false,
     name: "Shirt in organic cotton classic gingham",
     price: 59.0,
@@ -177,6 +182,7 @@ export const db = [
   },
   {
     imgUrl: `${i6}`,
+    popular: 4,
     newShop: false,
     name: "Tailored indigo jumpsuit ",
     price: 128.0,
@@ -212,6 +218,7 @@ export const db = [
   },
   {
     imgUrl: `${i7}`,
+    popular: 5,
     newShop: false,
     name: "Triple stone drop earrings",
     price: 49.5,
@@ -246,6 +253,7 @@ export const db = [
   },
   {
     imgUrl: `${i8}`,
+    popular: 4,
     newShop: false,
     name: "Stud Accessories Gold",
     price: 158.0,
@@ -283,6 +291,7 @@ export const db = [
   },
   {
     imgUrl: `${i9}`,
+    popular: 3,
     newShop: false,
     name: "Eye Mesh Boat Shoes female",
     price: 220.0,
@@ -316,6 +325,7 @@ export const db = [
   },
   {
     imgUrl: `${i10}`,
+    popular: 5,
     newShop: true,
     name: "Azure Tote Coat",
     price: 290.0,

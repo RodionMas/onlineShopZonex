@@ -18,6 +18,9 @@ const Home = ({
   setSelectAColor,
   setSelectASize,
   setActiveLinkNav,
+  womenFilter,
+  summerFilter,
+  accessoriesFilter,
 }) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,9 +34,9 @@ const Home = ({
       <div className="container">
         <Header />
         <div className="bannerWrapper">
-          <Banners1 />
-          <Banners2 />
-          <Banners3 />
+          <Banners1 womenFilter={womenFilter} />
+          <Banners2 summerFilter={summerFilter} />
+          <Banners3 accessoriesFilter={accessoriesFilter} />
         </div>
         <FilterProduct
           filterMain={filterMain}

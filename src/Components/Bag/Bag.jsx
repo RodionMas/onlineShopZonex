@@ -20,8 +20,6 @@ const Bag = ({
             <div key={item.id} className={style.bagBox}>
               <div className={style.imgBox}>
                 <Link onClick={() => {
-                  console.log(...item)
-                  console.log(item)
                  setValueProduct(valueProduct.productInfo = [...item]);
                 }} to={`/home/shop/${item.id}`}>
                   <img src={item.imgUrl} alt="" />

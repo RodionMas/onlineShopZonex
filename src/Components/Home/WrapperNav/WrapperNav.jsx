@@ -10,12 +10,22 @@ const WrapperNav = ({
   bagVisibleFn,
   bagVisible,
   productBag,
+  product,
+  setProduct,
+  valueProduct,
 }) => {
   return (
     <div className={style.wrapper}>
       <Nav activeLinkNav={activeLinkNav} setActiveLinkNav={setActiveLinkNav} />
       <Logo />
-      <IconNav productBag={productBag} bagVisible={bagVisible} bagVisibleFn={bagVisibleFn} />
+      <IconNav
+        valueProduct={valueProduct}
+        setProduct={setProduct}
+        product={product}
+        productBag={productBag}
+        bagVisible={bagVisible}
+        bagVisibleFn={bagVisibleFn}
+      />
     </div>
   );
 };
