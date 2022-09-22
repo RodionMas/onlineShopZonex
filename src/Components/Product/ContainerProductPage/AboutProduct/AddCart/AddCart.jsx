@@ -34,7 +34,7 @@ const AddCart = ({
         <button onClick={() => minusFn()} className={style.minus}>
           -
         </button>
-        <span className={style.num}>{valueProduct.count}</span>
+        <span className={style.num}>{counterProductPage === 1 ? counterProductPage : valueProduct.count}</span>
         <button onClick={() => plusFn()} className={style.plus}>
           +
         </button>
@@ -57,6 +57,7 @@ const AddCart = ({
             } else{
               setStub(false);
             }
+            setCounterProductPage(1)
           }}
         >
           ADD TO CART

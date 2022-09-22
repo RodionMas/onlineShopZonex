@@ -77,7 +77,7 @@ const IconNav = ({ bagVisibleFn, bagVisible, productBag, product, valueProduct }
             <img src={search} alt="search" />
           </button>
         </li>
-        <li className={style.itemIcon}>
+        <li className={style.itemIcon + " " + style.bagBox}>
           <button
             onClick={() => bagVisibleFn()}
             className={!bagVisible ? style.btnBag : style.close}
