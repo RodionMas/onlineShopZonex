@@ -21,7 +21,7 @@
     border: none;
     cursor: pointer;
 }
-.addCart button{
+.addCartBtn{
     width: 100%;
     font-size: 15px;
     padding: 15px 0;
@@ -50,4 +50,14 @@
 .wishlist button:active{
     color: #fff;
     background: rgb(80, 80, 80);
+}
+.disabledBtn{
+    background: #979797;
+    width: 100%;
+    font-size: 15px;
+    padding: 15px 0;
+    border: none;
+    color: #151515;
+    font-weight: 700;
+    margin: 10px 0;
 }

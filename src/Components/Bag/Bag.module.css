@@ -44,8 +44,9 @@
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+  position: relative;
 }
-.bagBox img {
+.productImg {
   width: 100px;
   height: 130px;
 }
@@ -80,6 +81,15 @@
   background-color: #cccccc;
 }
 .totalPrice{
+  padding-top: 15px;
   margin: 0 auto;
   text-align: center;
+}
+.close{
+  margin-left: 15px;
+}
+.closeBtn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }

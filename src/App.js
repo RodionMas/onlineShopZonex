@@ -316,6 +316,8 @@ function App() {
         counterProductPage={counterProductPage}
         valueProduct={valueProduct}
         wishlist={wishlist}
+        setWishlist={setWishlist}
+        setProductBag={setProductBag}
       />
       <Routes>
         <Route

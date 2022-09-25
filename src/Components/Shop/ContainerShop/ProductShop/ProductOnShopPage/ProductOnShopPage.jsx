@@ -10,6 +10,9 @@ const ProductOnShopPage = ({
   productOnShopPageFilter,
   activeNumber,
   uniqeArr,
+  current,
+  size,
+  getData,
 }) => {
   const [shopLink, setShopLink] = React.useState("/home/shop/");
   return (
@@ -25,7 +28,7 @@ const ProductOnShopPage = ({
       }
     >
       {uniqeArr.length === 0
-        ? productOnShopPageFilter.map((product, i) => (
+        ? getData(current, size).map((product, i) => (
             <div key={i}>
               <Link to={`${shopLink + product.id}`}>
                 <img
