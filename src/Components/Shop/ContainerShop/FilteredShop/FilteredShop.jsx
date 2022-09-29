@@ -1,4 +1,5 @@
 import React from "react";
+import style from './FilteredShop.module.css'
 import BrandShop from "./BrandShop/BrandShop";
 import CategoriesShop from "./CategoriesShop/CategoriesShop";
 import ColorShop from "./ColorShop/ColorShop";
@@ -41,7 +42,7 @@ const FilteredShop = ({
   offFilterProductDiscount,
 }) => {
   return (
-    <div>
+    <div className={style.wrapper}>
       <CategoriesShop
         offFilterProductCategory={offFilterProductCategory}
         onFilterProductCategory={onFilterProductCategory}

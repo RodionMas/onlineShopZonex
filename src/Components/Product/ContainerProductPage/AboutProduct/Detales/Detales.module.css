@@ -6,3 +6,9 @@
     color: #454545;
     font-weight: 500;
 }
+@media (max-width: 440px){
+  .wrapper {
+    margin: 10px auto;
+    max-width: 300px;
+  }
+}

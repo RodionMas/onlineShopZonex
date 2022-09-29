@@ -45,3 +45,30 @@
   color: #959595;
   left: 9px;
 }
+@media (max-width: 1300px){
+  .imageProduct {
+    width: 222px;
+    height: 274px;
+  }
+}
+@media (max-width: 1000px){
+  .imageProduct{
+    width: 168px;
+    height: 222px;
+  }
+  .textBox{
+    width: 168px;
+  }
+}
+/* related */
+@media (max-width: 900px){
+  .related{
+    text-align: center;
+  }
+}
+@media (max-width: 725px){
+  .textBox{
+    margin: 0 auto;
+    width: 250px;
+  }
+}

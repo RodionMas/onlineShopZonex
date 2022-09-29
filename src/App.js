@@ -284,6 +284,7 @@ function App() {
     setTimeout(() => {
       setActiveMarkenig(true);
     }, 6000);
+    // document.addEventListener('click', console.log())
   }, [
     newProductFilter,
     stub,
@@ -316,6 +317,8 @@ function App() {
         counterProductPage={counterProductPage}
         valueProduct={valueProduct}
         wishlist={wishlist}
+        setWishlist={setWishlist}
+        setProductBag={setProductBag}
       />
       <Routes>
         <Route

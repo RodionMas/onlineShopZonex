@@ -42,3 +42,19 @@ line-height: 100px;
 .link:hover{
     border-bottom: 2px solid #fff;
 }
+@media (max-width: 860px) {
+   .wrapper{
+    flex-direction: column;
+   }
+   .bannerLeft, .bannerRight{
+    width: 100%;
+   }
+}
+@media (max-width: 418px) {
+    .bannerLeft, .bannerRight{
+        height: 192px;
+    }
+    .title{
+        font-size: 27px;
+    }
+}

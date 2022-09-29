@@ -40,3 +40,12 @@
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
+@media (max-width: 550px) {
+  .categoriesTextBox {
+    justify-content: space-around;
+  }
+  .wrapper{
+    width: 243px;
+    padding-right: 0px;
+  }
+}

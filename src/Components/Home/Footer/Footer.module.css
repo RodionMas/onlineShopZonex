@@ -59,3 +59,26 @@
 .socialItem + .socialItem{
     margin-left: 10px;
 }
+@media (max-width: 1060px) {
+    .inp{
+        width: 310px;
+    }
+}
+@media (max-width: 700px) {
+    .wrapper{
+        flex-direction: column;
+        text-align: center;
+    }
+    .service{
+        margin: 0 auto;
+    }
+    .company{
+        margin: 20px auto;
+    }
+    .our{
+        margin: 20px auto;
+    }
+    .list{
+        margin-top: 10px;
+    }
+}

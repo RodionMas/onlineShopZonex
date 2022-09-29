@@ -8,7 +8,7 @@ const BannerBottom = () => {
         <div className={style.box}>
         <span className={style.title}>Men’s Sportswear</span>
         <br />
-        <Link className={style.link} to={"/shop"}>Read mode</Link>
+        <Link className={style.link} to={"/home/shop/"}>Read mode</Link>
         </div>
       </div>
 
@@ -16,7 +16,7 @@ const BannerBottom = () => {
         <div className={style.box}>
         <span className={style.title}>Find your fit</span>
         <br />
-        <Link className={style.link} to={"/shop"}>Read more</Link>
+        <Link className={style.link} to={"/home/shop/"}>Read more</Link>
         </div>
       </div>
     </div>

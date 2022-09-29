@@ -1,22 +1,41 @@
-.wrapper{
-    display: flex;
-    justify-content: center;
+.wrapper {
+  display: flex;
+  justify-content: center;
 }
-.text{
-    margin-top: 50px;
-    font-size: 24px;
-    color: #aaaaaa;
-    
+.text {
+  margin-top: 50px;
+  font-size: 24px;
+  color: #aaaaaa;
 }
 .wrapper span {
-    cursor: pointer;
+  cursor: pointer;
 }
 .wrapper span + span {
-    margin-left: 38px;
-    
+  margin-left: 38px;
 }
-.active{
-    color: #000;
-    margin-top: 50px;
-    font-size: 24px;
+.active {
+  color: #000;
+  margin-top: 50px;
+  font-size: 24px;
+}
+
+@media (max-width: 600px) {
+  .wrapper span + span {
+    margin-left: 15px;
+  }
+  .wrapper span {
+    font-size: 15px;
+  }
+}
+@media (max-width: 360px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .wrapper span:nth-child(1){
+    margin-left: 15px;
+  }
 }

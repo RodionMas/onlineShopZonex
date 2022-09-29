@@ -91,6 +91,58 @@ const RelatedProduct = ({ valueProduct, productOnShopPageFilter, setValueProduct
             );
           })}
         </Swiper>
+        <Swiper className="mySwiperRelatedMobile" pagination={true} modules={[Pagination]}>
+        {productOnShopPageFilter.map((product, i) => {
+            return (
+              <SwiperSlide key={product.id}>
+                <Link
+                  onClick={() => {
+                    setValueProduct(valueProduct.productInfo = [...product]);
+                  }}
+                  to={`${pathRelateProduct + product.id}`}
+                >
+                  <img
+                    className={style.imageProduct}
+                    src={product.imgUrl}
+                    alt=""
+                  />
+                  <div className={style.textBox}>
+                    {product.newShop && (
+                      <span className={style.all}>
+                        <img src={n} alt="" /> NEW
+                      </span>
+                    )}
+                    {product.hot && (
+                      <span className={style.all}>
+                        <img src={hotest} alt="" /> HOT
+                      </span>
+                    )}
+                    {product.top && (
+                      <span className={style.all}>
+                        <img src={topShop} alt="" /> TOP
+                      </span>
+                    )}
+                    {product.bestSellers && (
+                      <span className={style.all}>
+                        <img src={best} alt="" /> BEST SELLER
+                      </span>
+                    )}
+                    <br />
+                    <span className={style.name}>{product.name}</span>
+                    <br />
+                    <span className={style.price}>${product.price}</span>
+                    {product.newPrice && (
+                      <span className={style.newPrice}>
+                        - ${product.newPrice}
+                        <hr className={style.lineNewPrice} />
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
       <hr />
     </div>

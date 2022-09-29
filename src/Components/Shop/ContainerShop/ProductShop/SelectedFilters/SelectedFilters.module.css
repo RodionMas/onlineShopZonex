@@ -1,17 +1,21 @@
-.wrapper{
-    margin-bottom: 30px;
+.wrapper {
+  margin-bottom: 30px;
 }
-.filterText{
-    color: #454545;
-    padding: 8px 14px;
-    background: #eeeeee;
-    border-radius: 20px;
-    margin-right: 5px;
+.filterText {
+  color: #454545;
+  padding: 8px 14px;
+  background: #eeeeee;
+  border-radius: 20px;
+  margin-right: 5px;
 }
-
-.close{
-    cursor: pointer;
-    padding-top: 3px;
-    position: relative;
-    top: 1px;
+.close {
+  cursor: pointer;
+  padding-top: 3px;
+  position: relative;
+  top: 1px;
+}
+@media (max-width: 1725px) {
+    .wrapper{
+        margin-top: 30px;
+    }
 }

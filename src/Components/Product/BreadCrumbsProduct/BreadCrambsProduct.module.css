@@ -13,3 +13,19 @@
 .separator{
     padding: 0 15px;
 }
+@media (max-width: 375px){
+    .wrapper{
+        flex-direction: column;
+        text-align: center;
+    }
+    .separator{
+        position: relative;
+        display: none;
+    }
+    .link{
+        margin-top: 9px;
+    }
+    .active{
+        margin-top: 9px;
+    }
+}

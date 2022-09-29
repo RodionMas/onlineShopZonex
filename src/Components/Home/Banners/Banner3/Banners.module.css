@@ -1,29 +1,80 @@
-.wrapper{
-    display: flex;
-    width: 600px;
-    height: 290px;
-    justify-content: center;
-    background: #eeeeec;
-    align-items: center;
-    margin: 0 10px;
+.wrapper {
+  display: flex;
+  width: 600px;
+  height: 290px;
+  justify-content: center;
+  background: #eeeeec;
+  align-items: center;
+  margin: 0 10px;
 }
-.text{
-    width: 175px;
+.text {
+  width: 175px;
 }
-.link{
-    position: relative;
-    top: 32px;
-    font-size: 15px;
-    color: #2c2c2c;
-    padding-bottom: 4px;
+.link {
+  position: relative;
+  top: 32px;
+  font-size: 15px;
+  color: #2c2c2c;
+  padding-bottom: 4px;
 }
-.link:hover{
-    border-bottom: 2px solid #111;
+.link:hover {
+  border-bottom: 2px solid #111;
 }
-.title{
-    font-weight: 300;
-    font-size: 32px;
+.title {
+  font-weight: 300;
+  font-size: 32px;
 }
-.bannerHero{
-    height: 290px;
+.bannerHero {
+  height: 290px;
+}
+@media (max-width: 1320px){
+  .wrapper{
+      height: 213px;
+  }
+  .title{
+    font-size: 23px;
+  }
+  .text{
+    margin-left: 10px;
+  }
+  .bannerHero{
+    height: 213px;
+  }
+}
+@media (max-width: 1133px) {
+  .wrapper{
+    width: 25%;
+    height: 145px;
+  }
+  .bannerHero{
+    height: 145px;
+  }
+  .title{
+    font-size: 16px;
+  }
+}
+@media (max-width: 942px) {
+  .wrapper{
+    width: 350px;
+    height: 206px;
+  }
+  .bannerHero{
+    height: 206px;
+  }
+}
+@media (max-width: 500px) {
+  .title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .text {
+    margin-left: 10px;
+  }
+  .wrapper {
+    height: 172px;
+    width: 100%;
+  }
+  .bannerHero {
+    height: 172px;
+  }
 }
