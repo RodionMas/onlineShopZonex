@@ -23,3 +23,8 @@
     position: absolute;
     color: #959595;
 }
+@media (max-width: 900px) {
+    .wrapper{
+        justify-content: center;
+    }
+}

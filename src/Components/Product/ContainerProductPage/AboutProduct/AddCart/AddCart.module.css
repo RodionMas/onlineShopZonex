@@ -43,10 +43,6 @@
     color: #151515;
     font-weight: 700;
 }
-.addCart button:active{
-    background: #ccc;
-    color: #111;
-}
 .wishlist button:active{
     color: #fff;
     background: rgb(80, 80, 80);

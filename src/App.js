@@ -284,6 +284,7 @@ function App() {
     setTimeout(() => {
       setActiveMarkenig(true);
     }, 6000);
+    // document.addEventListener('click', console.log())
   }, [
     newProductFilter,
     stub,

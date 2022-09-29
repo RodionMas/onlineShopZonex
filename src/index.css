@@ -506,3 +506,16 @@ cursor: initial;
   background-color: #eceff5;
   border-color: #eceff5;
 }
+@media (max-width: 1350px){
+  .mySwiperProduct2 .swiper-slide img {
+    width: 100%;
+  }
+  .mySwiperProduct2{
+    width: 503px !important;
+  }
+}
+@media (max-width: 666px){
+  .mySwiperProduct{
+    display: none;
+  }
+}

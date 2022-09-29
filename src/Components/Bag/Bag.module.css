@@ -3,12 +3,13 @@
   width: 700px;
   position: absolute;
   z-index: 10;
-  top: -1504px;
+  top: -100%;
   right: 0;
   font-family: "Nunito", sans-serif;
   background-color: #fff;
   opacity: 0.5;
   transition: all 1s;
+  
 }
 .wrapper {
   height: 100vh;
@@ -21,6 +22,7 @@
   background-color: #fff;
   opacity: 1;
   transition: all 1s;
+  z-index: 11;
 }
 .cart {
   margin: 0 auto;
@@ -92,4 +94,33 @@
   background: transparent;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 717px) {
+  .wrapper{
+    width: 100%;
+  }
+  .cart{
+    max-width: 100%;
+  }
+  .wishlist{
+    max-width: 100%;
+  }
+}
+@media (max-width: 386px){
+  .bagBox {
+    flex-direction: column;
+  }
+  .nameBox{
+    width: 100%;
+    font-size: 14px;
+  }
+  .cart{
+    overflow-x: hidden;
+  }
+  .wishlist{
+    overflow-x: hidden;
+  }
+  .wrapper{
+    top: 105px;
+  }
 }

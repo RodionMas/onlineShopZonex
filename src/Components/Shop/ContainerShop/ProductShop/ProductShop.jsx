@@ -54,7 +54,7 @@ const ProductShop = ({
   //Pagination--
 
   return (
-    <div>
+    <div className={style.wrapper}>
       <div className={style.box}>
         <ColumnNumbers
           activeNumberFn={activeNumberFn}

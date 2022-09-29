@@ -3,5 +3,10 @@
   left: 143px;
   width: 423px;
 }
-
+@media (max-width: 1350px){
+  .wrapper{
+    left: 20px;
+    margin-right: 20px;
+  }
+}
 

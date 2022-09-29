@@ -7,3 +7,13 @@
   grid-column-gap: 10px;
   grid-row-gap: 0px;
 }
+@media (max-width: 1350px){
+  .wrapper{
+    width: 630px;
+  }
+}
+@media (max-width: 900px) {
+  .wrapper {
+    height: 100%;
+  }
+}

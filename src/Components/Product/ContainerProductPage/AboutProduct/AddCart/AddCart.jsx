@@ -11,8 +11,10 @@ const AddCart = ({
   selectASize,
   stub,
   wishlist,
+  setProductBag,
 }) => {
   const [disabledBtn, setDisabledBtn] = React.useState(false);
+
   const plusFn = () => {
     if (counterProductPage < 10) {
       ++valueProduct.count;
@@ -47,6 +49,7 @@ const AddCart = ({
           }
           disabled={disabledBtn}
           onClick={() => {
+            
             if (selectASize === "SELECT A SIZE") {
               alert("SELECT A SIZE");
             }
@@ -60,9 +63,12 @@ const AddCart = ({
               setDisabledBtn(true);
               if (disabledBtn === false) {
                 setTimeout(() => {
+                  productBag.map((item, i) => {
+                    return item.id === valueProduct.id && productBag.splice(i, 1)
+                  })
                   setDisabledBtn(false);
-                  productBag.push(valueProduct);
-                  setStub(true);
+                  setProductBag([...productBag, {...valueProduct}])
+                  valueProduct.count = 1
                 }, 1500);
               }
             }

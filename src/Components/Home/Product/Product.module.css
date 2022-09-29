@@ -34,3 +34,9 @@
     color: #959595;
     left: 8px;
 }
+@media (max-width: 1085px) {
+  .priceBox {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -18,3 +18,12 @@
     display: block;
     margin-top: 30px;
 }
+@media (max-width: 800px){
+    .titleBox h1{
+        font-size: 40px;
+        line-height: 32px;
+    }
+    .titleBox{
+        display: none;
+    }
+}

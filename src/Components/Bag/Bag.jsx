@@ -33,7 +33,7 @@ const Bag = ({
     <div className={bagVisible ? style.wrapper : style.wrapperHidden}>
       <div className={style.cart}>
         <h2>Your Purchases</h2>
-        {[...new Set(productBag)].map((item, i) => {
+        {[...new Set(productBag)].map((item) => {
           fnTotal(item.price, item.count);
           return (
             <div key={item.id} className={style.bagBox}>
@@ -93,7 +93,7 @@ const Bag = ({
       <hr />
       <div className={style.wishlist}>
         <h2>Your Wishlist</h2>
-        {[...new Set(wishlist)].map((item, i) => {
+        {[...new Set(wishlist)].map((item) => {
           return (
             <div key={item.id} className={style.bagBox}>
               <div className={style.imgBox}>
